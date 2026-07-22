@@ -1,0 +1,29 @@
+{
+  "c1_pld_reduction": {
+    "passed": true,
+    "eps_base": 4.637964774951076,
+    "eps_alloc": 3.463796477495107
+  },
+  "c2_fast_algo": {
+    "passed": true,
+    "max_error": 3.469446951953614e-18
+  },
+  "c3_poisson_subsample": {
+    "passed": true,
+    "eps_sub": 3.581213307240704,
+    "eps_base": 4.637964774951076
+  },
+  "c4_tighter_bounds": {
+    "passed": true,
+    "eps_pld": 3.463796477495107,
+    "eps_naive": 23.18982387475538
+  },
+  "c5_bernoulli": {
+    "passed": true
+  },
+  "c6_dp_sgd": {
+    "passed": true,
+    "eps_pld": 3.0332681017612515,
+    "eps_naive": 46.37964774951076
+  }
+}
