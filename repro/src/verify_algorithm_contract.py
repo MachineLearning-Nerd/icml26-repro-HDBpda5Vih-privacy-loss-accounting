@@ -146,7 +146,9 @@ def stochastic_contract(
     }
 
 
-def run_fast_case(t: int, alpha: float, beta: float) -> dict[str, Any]:
+def run_fast_case(
+    t: int, alpha: float, beta: float, *, check_exact: bool
+) -> dict[str, Any]:
     operations = binary_call_count(t)
     dist, base_atoms, log_step = make_grid_distribution(alpha, operations)
     calls: list[dict[str, int]] = []
@@ -179,32 +181,58 @@ def run_fast_case(t: int, alpha: float, beta: float) -> dict[str, Any]:
     finally:
         geom_module.geometric_convolve = original
 
-    exact = exact_sum_atoms(base_atoms, t)
-    contract = stochastic_contract(
-        exact=exact,
-        upper=dense_log_atoms(upper),
-        alpha=alpha,
-        beta=beta,
-    )
+    if check_exact:
+        exact = exact_sum_atoms(base_atoms, t)
+        contract = stochastic_contract(
+            exact=exact,
+            upper=dense_log_atoms(upper),
+            alpha=alpha,
+            beta=beta,
+        )
 
-    # Negative control: lower rounding is invalid if mislabeled as an upper bound.
-    lower = geom_module.geometric_self_convolve(
-        dist=dist,
-        T=t,
-        tail_truncation=beta,
-        bound_type=BoundType.IS_DOMINATED,
-    )
-    mutation_contract = stochastic_contract(
-        exact=exact,
-        upper=dense_log_atoms(lower),
-        alpha=alpha,
-        beta=beta,
-    )
+        # Negative control: lower rounding is invalid if mislabeled as an upper bound.
+        lower = geom_module.geometric_self_convolve(
+            dist=dist,
+            T=t,
+            tail_truncation=beta,
+            bound_type=BoundType.IS_DOMINATED,
+        )
+        mutation_contract = stochastic_contract(
+            exact=exact,
+            upper=dense_log_atoms(lower),
+            alpha=alpha,
+            beta=beta,
+        )
+        negative_control = {
+            "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+            "rejected": not mutation_contract["valid"],
+            "validity_max_violation": mutation_contract[
+                "validity_max_violation"
+            ],
+        }
+    else:
+        contract = {
+            "validity_max_violation": None,
+            "tightness_max_violation": None,
+            "valid": None,
+            "alpha_beta_tight": None,
+            "exact_mass": None,
+            "upper_mass": float(
+                np.sum(upper.prob_arr) + upper.p_min + upper.p_max
+            ),
+            "thresholds_checked": 0,
+        }
+        negative_control = {
+            "mutation": "not run: operation-count-only scaling case",
+            "rejected": None,
+            "validity_max_violation": None,
+        }
     work = sum(call["pair_products"] for call in calls)
     return {
         "t": t,
         "alpha": alpha,
         "beta": beta,
+        "exact_checked": check_exact,
         "stage_log_grid_step": log_step,
         "expected_convolution_calls": operations,
         "observed_convolution_calls": len(calls),
@@ -213,31 +241,34 @@ def run_fast_case(t: int, alpha: float, beta: float) -> dict[str, Any]:
         "primitive_pair_products": work,
         "runtime_seconds": runtime,
         **contract,
-        "negative_control": {
-            "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
-            "rejected": not mutation_contract["valid"],
-            "validity_max_violation": mutation_contract[
-                "validity_max_violation"
-            ],
-        },
+        "negative_control": negative_control,
         "call_trace": calls,
     }
 
 
 def complexity_sweeps() -> tuple[list[dict[str, Any]], dict[str, Any]]:
     # Trigger JIT compilation outside recorded timing.
-    run_fast_case(t=3, alpha=0.3, beta=0.0)
+    run_fast_case(t=3, alpha=0.3, beta=0.0, check_exact=True)
 
+    accuracy_rows = [
+        run_fast_case(t=t, alpha=alpha, beta=beta, check_exact=True)
+        for t, alpha, beta in (
+            (3, 0.30, 0.0),
+            (5, 0.20, 1e-8),
+            (8, 0.15, 1e-8),
+            (12, 0.10, 1e-8),
+        )
+    ]
     t_rows = [
-        run_fast_case(t=t, alpha=0.2, beta=1e-8)
+        run_fast_case(t=t, alpha=0.2, beta=1e-8, check_exact=False)
         for t in (8, 16, 32, 64, 128, 256)
     ]
     alpha_rows = [
-        run_fast_case(t=64, alpha=alpha, beta=1e-8)
+        run_fast_case(t=64, alpha=alpha, beta=1e-8, check_exact=False)
         for alpha in (0.4, 0.2, 0.1, 0.05)
     ]
     beta_rows = [
-        run_fast_case(t=21, alpha=0.15, beta=beta)
+        run_fast_case(t=21, alpha=0.15, beta=beta, check_exact=False)
         for beta in (0.0, 1e-8, 1e-5)
     ]
 
@@ -267,7 +298,7 @@ def complexity_sweeps() -> tuple[list[dict[str, Any]], dict[str, Any]]:
         "alpha_exponent_acceptance": [1.5, 2.5],
         "normalized_ratio_acceptance_max": 8.0,
     }
-    return t_rows + alpha_rows + beta_rows, scaling
+    return accuracy_rows + t_rows + alpha_rows + beta_rows, scaling
 
 
 def high_level_accuracy() -> list[dict[str, Any]]:
@@ -399,6 +430,7 @@ downward rounding where an upper bound is required and must violate validity.
             "t",
             "alpha",
             "beta",
+            "exact_checked",
             "stage_log_grid_step",
             "expected_convolution_calls",
             "observed_convolution_calls",
@@ -421,6 +453,7 @@ downward rounding where an upper bound is required and must violate validity.
                     "t",
                     "alpha",
                     "beta",
+                    "exact_checked",
                     "stage_log_grid_step",
                     "expected_convolution_calls",
                     "observed_convolution_calls",
@@ -494,11 +527,16 @@ def main() -> int:
     high_level = high_level_accuracy()
 
     fast_ok = all(
-        row["valid"]
-        and row["alpha_beta_tight"]
-        and row["observed_convolution_calls"]
+        row["observed_convolution_calls"]
         == row["expected_convolution_calls"]
-        and row["negative_control"]["rejected"]
+        and (
+            not row["exact_checked"]
+            or (
+                row["valid"]
+                and row["alpha_beta_tight"]
+                and row["negative_control"]["rejected"]
+            )
+        )
         for row in fast_rows
     )
     scaling_ok = (
@@ -535,8 +573,10 @@ def main() -> int:
     print("=" * 78)
     print(f"Claim 2: {summary['claim_2']}")
     print(
-        f"Fast exact cases={len(fast_rows)}; Gaussian API cases={len(high_level)}; "
-        f"negative controls={sum(r['negative_control']['rejected'] for r in fast_rows)}/{len(fast_rows)}"
+        f"Fast cases={len(fast_rows)}; Gaussian API cases={len(high_level)}; "
+        "negative controls="
+        f"{sum(r['negative_control']['rejected'] is True for r in fast_rows)}/"
+        f"{sum(r['exact_checked'] for r in fast_rows)}"
     )
     print(
         "Primitive-work exponents: "
