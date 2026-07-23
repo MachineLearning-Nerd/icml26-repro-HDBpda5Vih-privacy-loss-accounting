@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import math
 import time
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from typing import Any, Callable
 
 import numpy as np
@@ -39,6 +40,7 @@ CLIP_SCALE = 1.02
 BATCH_SIZES = (512, 1_028, 4_096, 600_000)
 BLOCK_SIZES = tuple(int(2**value) for value in range(2, 12))
 ORDERS = np.arange(2, 51, dtype=int)
+MAX_WORKERS = 4
 BASE_CONFIG = AllocationSchemeConfig(
     loss_discretization=1e-3,
     tail_truncation=DELTA * 0.01,
@@ -274,6 +276,39 @@ def invert_decreasing(
     }
 
 
+def evaluate_grid_point(
+    batch_size: int, block_size: int
+) -> dict[str, Any]:
+    """Evaluate one independent full-scale PREAMBLE configuration."""
+    pld_value, pld_meta = pld_epsilon(1.0, batch_size, block_size)
+    rdp_value, rdp_meta = rdp_epsilon(1.0, batch_size, block_size)
+    improvement = (rdp_value - pld_value) / rdp_value
+    return {
+        "batch_size": batch_size,
+        "B": block_size,
+        "n": N,
+        "d": D,
+        "communication_C": C,
+        "epochs": EPOCHS,
+        "delta": DELTA,
+        "global_sigma": 1.0,
+        "q": pld_meta["q"],
+        "rounds": pld_meta["rounds"],
+        "t": pld_meta["t"],
+        "k": pld_meta["k"],
+        "block_norm": pld_meta["block_norm"],
+        "effective_sigma": pld_meta["effective_sigma"],
+        "pld_epsilon": pld_value,
+        "rdp_epsilon": rdp_value,
+        "relative_improvement": improvement,
+        "rdp_optimal_order": rdp_meta["optimal_order"],
+        "rdp_remove_alpha2": rdp_meta["remove_alpha2"],
+        "rdp_alpha2_closed_form": rdp_meta["alpha2_closed_form"],
+        "rdp_alpha2_abs_error": rdp_meta["alpha2_abs_error"],
+        "max_grid_mult": pld_meta["max_grid_mult"],
+    }
+
+
 def write_bundle(
     rows: list[dict[str, Any]],
     anchor: dict[str, Any],
@@ -335,7 +370,9 @@ current pinned author PLD release.
 At each of the 40 source configurations, a full random-allocation PLD is built
 with `k=C/B` and `t=d/B`, transformed by the paper's PLD Poisson-subsampling
 rule, and composed for `ceil(n/batch_size)*E` updates. The multiplicative grid
-is capped at the paper's one million bins per direction.
+is capped at the paper's one million bins per direction. Independent grid
+points are scheduled across four CPU worker processes; this changes only wall
+time, not any accountant, parameter, result, or acceptance predicate.
 
 The independent RDP path implements the versioned paper experiment: exact
 integer remove-direction moments via a log-space generating function, the
@@ -390,6 +427,7 @@ directly checking the paper figure's required-noise interpretation.
             "source_experiment_commit": "d49e87d",
             "rdp_orders": [int(value) for value in ORDERS],
             "cpu_only": True,
+            "grid_worker_processes": MAX_WORKERS,
         }
     )
     write_json(out / "exact_command_environment.json", metadata)
@@ -424,44 +462,26 @@ Verdict: **{'VERIFIED' if summary['passed'] else 'FALSIFIED'}**
 def main() -> int:
     started = time.perf_counter()
     rows: list[dict[str, Any]] = []
-    for batch_size in BATCH_SIZES:
-        for block_size in BLOCK_SIZES:
-            pld_value, pld_meta = pld_epsilon(1.0, batch_size, block_size)
-            rdp_value, rdp_meta = rdp_epsilon(1.0, batch_size, block_size)
-            improvement = (rdp_value - pld_value) / rdp_value
-            rows.append(
-                {
-                    "batch_size": batch_size,
-                    "B": block_size,
-                    "n": N,
-                    "d": D,
-                    "communication_C": C,
-                    "epochs": EPOCHS,
-                    "delta": DELTA,
-                    "global_sigma": 1.0,
-                    "q": pld_meta["q"],
-                    "rounds": pld_meta["rounds"],
-                    "t": pld_meta["t"],
-                    "k": pld_meta["k"],
-                    "block_norm": pld_meta["block_norm"],
-                    "effective_sigma": pld_meta["effective_sigma"],
-                    "pld_epsilon": pld_value,
-                    "rdp_epsilon": rdp_value,
-                    "relative_improvement": improvement,
-                    "rdp_optimal_order": rdp_meta["optimal_order"],
-                    "rdp_remove_alpha2": rdp_meta["remove_alpha2"],
-                    "rdp_alpha2_closed_form": rdp_meta[
-                        "alpha2_closed_form"
-                    ],
-                    "rdp_alpha2_abs_error": rdp_meta["alpha2_abs_error"],
-                    "max_grid_mult": pld_meta["max_grid_mult"],
-                }
-            )
+    configurations = [
+        (batch_size, block_size)
+        for batch_size in BATCH_SIZES
+        for block_size in BLOCK_SIZES
+    ]
+    with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        pending = {
+            executor.submit(evaluate_grid_point, *configuration): configuration
+            for configuration in configurations
+        }
+        for future in as_completed(pending):
+            row = future.result()
+            rows.append(row)
             print(
-                f"PREAMBLE batch={batch_size} B={block_size}: "
-                f"PLD eps={pld_value:.6g}, RDP eps={rdp_value:.6g}",
+                f"PREAMBLE batch={row['batch_size']} B={row['B']}: "
+                f"PLD eps={row['pld_epsilon']:.6g}, "
+                f"RDP eps={row['rdp_epsilon']:.6g}",
                 flush=True,
             )
+    rows.sort(key=lambda row: (row["batch_size"], row["B"]))
 
     anchor_batch, anchor_block = 512, 2_048
     pld_root = invert_decreasing(
