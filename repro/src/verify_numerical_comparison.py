@@ -473,10 +473,11 @@ def write_bundle(
                 "Chua lower bound; on resolved Figure 2 points the median and "
                 "90th-percentile PLD/Chua gaps are <=0.15 and <=0.30 log10 "
                 "decades; every profile has >=3 statistically stable Monte "
-                "Carlo points; PLD lies below their simultaneous 99% Monte "
-                "Carlo upper bounds and has median/90th-percentile gaps <=0.15/"
-                "0.30 decades; independent numerical checks and the 10x-lower-"
-                "bound mutation test pass."
+                "Carlo points; each rigorous PLD lower bound lies below its "
+                "simultaneous 99% Monte Carlo upper bound and the PLD/MC "
+                "median/90th-percentile gaps are <=0.15/0.30 decades; "
+                "independent numerical checks and the 10x-lower-bound mutation "
+                "test pass."
             ),
         },
     )
@@ -524,7 +525,10 @@ et al. using their published Criteo order-index grids. One joint sample of
 over all epsilon values. A Bernoulli-KL Chernoff inversion gives simultaneous
 99% upper confidence bounds over all 160 directional estimates. Comparisons to
 the Monte Carlo mean are made only where at least 200 expected nonzero samples
-make the estimate statistically resolved.
+make the estimate statistically resolved. Confidence consistency requires the
+Monte Carlo upper confidence bound to be no smaller than the rigorous PLD lower
+bound. It does not compare two upper bounds, whose unrelated numerical slack
+need not be ordered.
 """,
     )
     write_json(
@@ -721,7 +725,7 @@ def main() -> int:
     mc_ok = (
         all(count >= 3 for count in stable_counts.values())
         and all(
-            row["pld_delta_upper"]
+            row["pld_delta_lower"]
             <= row["mc_simultaneous_upper"]
             + max(PROFILE_TAIL, 0.01 * row["mc_simultaneous_upper"])
             for row in stable_rows
