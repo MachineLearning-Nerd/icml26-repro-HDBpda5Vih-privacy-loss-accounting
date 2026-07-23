@@ -64,6 +64,7 @@ def runtime_metadata(seeds: list[int] | None = None) -> dict[str, Any]:
         "author_implementation": {
             "url": "https://github.com/moshenfeld/PLD_accounting.git",
             "commit": "11ed6d14e846de658465fb91309f574ab933cdc9",
+            "version": "0.5.0",
         },
     }
 
