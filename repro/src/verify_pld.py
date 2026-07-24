@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from verify_algorithm_contract import main as verify_algorithm
 from verify_exact_theorems import main as verify_exact
-from verify_preamble import main as verify_preamble
+from verify_preamble_anchor import main as verify_preamble
 
 
 def main() -> int:
