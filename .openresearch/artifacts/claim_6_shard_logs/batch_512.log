@@ -1,0 +1,11 @@
+PREAMBLE batch=512 B=32: PLD eps=0.572023, RDP eps=1.05018
+PREAMBLE batch=512 B=16: PLD eps=0.603623, RDP eps=1.04823
+PREAMBLE batch=512 B=4: PLD eps=0.799236, RDP eps=1.04692
+PREAMBLE batch=512 B=8: PLD eps=0.679053, RDP eps=1.04734
+PREAMBLE batch=512 B=64: PLD eps=0.553294, RDP eps=1.0555
+PREAMBLE batch=512 B=128: PLD eps=0.56441, RDP eps=1.09446
+PREAMBLE batch=512 B=256: PLD eps=0.603402, RDP eps=1.18609
+PREAMBLE batch=512 B=512: PLD eps=0.706706, RDP eps=1.46981
+PREAMBLE batch=512 B=1024: PLD eps=1.28122, RDP eps=2.95114
+PREAMBLE batch=512 B=2048: PLD eps=5.40296, RDP eps=8.32301
+ValueError: Subsampling transform produced invalid bounds: new_min=0.000853698, new_max=0.000853698
