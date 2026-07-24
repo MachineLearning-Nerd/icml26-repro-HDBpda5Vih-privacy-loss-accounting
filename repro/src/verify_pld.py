@@ -13,9 +13,9 @@ def main() -> int:
     """Run every accepted claim gate; any failing suite fails the node."""
     exact_status = verify_exact()
     algorithm_status = verify_algorithm()
+    preamble_status = verify_preamble()
     numerical_status = verify_numerical()
     bernoulli_status = verify_bernoulli()
-    preamble_status = verify_preamble()
     print(
         "CUMULATIVE_STATUS="
         f"{{'claims_1_3': {exact_status}, 'claim_2': {algorithm_status}, "

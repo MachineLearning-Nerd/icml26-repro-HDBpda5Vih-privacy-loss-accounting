@@ -95,6 +95,13 @@ EXPECTED_SOURCES = {
 }
 EXPECTED_ANCHOR_RUN = "fe365c41-6a04-4ae0-8cfc-b5b3e1c2e7ef"
 EXPECTED_ANCHOR_COMMIT = "6aa326b9b78a3d837ed21384b9e3994f6239ba5b"
+EXPECTED_ANCHOR_FULL_LOG_BYTES = 13_771
+EXPECTED_ANCHOR_FULL_LOG_SHA256 = (
+    "a4c09319ffedf9108b20254e8373e09a6c3abadfc4b5ea491741ac85089c16a9"
+)
+EXPECTED_ANCHOR_EXCERPT_SHA256 = (
+    "5d18f3553a75cce8a5e921549d79efc08fd69ed7d289ee2faf4c461a3b82633e"
+)
 
 
 def _log_add(left: float, right: float) -> float:
@@ -304,9 +311,16 @@ def _load_anchor() -> tuple[dict[str, Any], dict[str, Any]]:
         "run_id": source["run_id"] == EXPECTED_ANCHOR_RUN,
         "commit_sha": source["commit_sha"] == EXPECTED_ANCHOR_COMMIT,
         "terminal_status_done": source["terminal_status"] == "done",
-        "full_log_sha256": len(source["full_log_sha256"]) == 64,
-        "full_log_bytes": source["full_log_bytes"] > 0,
-        "excerpt_sha256": source["excerpt_sha256"] == sha256(log_path),
+        "full_log_sha256": (
+            source["full_log_sha256"] == EXPECTED_ANCHOR_FULL_LOG_SHA256
+        ),
+        "full_log_bytes": (
+            source["full_log_bytes"] == EXPECTED_ANCHOR_FULL_LOG_BYTES
+        ),
+        "excerpt_sha256": (
+            source["excerpt_sha256"] == EXPECTED_ANCHOR_EXCERPT_SHA256
+            and sha256(log_path) == EXPECTED_ANCHOR_EXCERPT_SHA256
+        ),
         "raw_line_in_excerpt": raw_line in text,
         "fixed_command": result["fixed_command"] == FIXED_COMMAND,
         "parameters": (
