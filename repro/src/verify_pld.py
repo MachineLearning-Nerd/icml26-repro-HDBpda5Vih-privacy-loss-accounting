@@ -6,7 +6,7 @@ from verify_algorithm_contract import main as verify_algorithm
 from verify_bernoulli_utility import main as verify_bernoulli
 from verify_exact_theorems import main as verify_exact
 from verify_numerical_comparison import main as verify_numerical
-from verify_preamble import main as verify_preamble
+from verify_preamble_collector import main as verify_preamble
 
 
 def main() -> int:
