@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import json
 import math
 import time
 from concurrent.futures import ProcessPoolExecutor, as_completed
+from pathlib import Path
 from typing import Any, Callable
 
 import numpy as np
@@ -41,6 +43,17 @@ BATCH_SIZES = (512, 1_028, 4_096, 600_000)
 BLOCK_SIZES = tuple(int(2**value) for value in range(2, 12))
 ORDERS = np.arange(2, 51, dtype=int)
 MAX_WORKERS = 4
+SHARD_CONFIG = Path(__file__).parents[1] / "config" / "claim6_batch.txt"
+SHARD_VALUE = SHARD_CONFIG.read_text(encoding="utf-8").strip()
+ACTIVE_BATCH_SIZES = (
+    BATCH_SIZES if SHARD_VALUE == "all" else (int(SHARD_VALUE),)
+)
+if not set(ACTIVE_BATCH_SIZES).issubset(BATCH_SIZES):
+    raise ValueError(f"invalid Claim 6 batch shard: {SHARD_VALUE}")
+FULL_DOMAIN = ACTIVE_BATCH_SIZES == BATCH_SIZES
+ARTIFACT_DIR = ARTIFACTS / (
+    "claim_6" if FULL_DOMAIN else f"claim_6_shard_{SHARD_VALUE}"
+)
 BASE_CONFIG = AllocationSchemeConfig(
     loss_discretization=1e-3,
     tail_truncation=DELTA * 0.01,
@@ -315,7 +328,7 @@ def write_bundle(
     summary: dict[str, Any],
     runtime: float,
 ) -> None:
-    out = ARTIFACTS / "claim_6"
+    out = ARTIFACT_DIR
     write_json(
         out / "claim_contract.json",
         {
@@ -332,17 +345,19 @@ def write_bundle(
                 "C": C,
                 "epochs": EPOCHS,
                 "delta": DELTA,
-                "batch_sizes": list(BATCH_SIZES),
+                "batch_sizes": list(ACTIVE_BATCH_SIZES),
                 "block_sizes": list(BLOCK_SIZES),
                 "fixed_sigma": 1.0,
                 "root_anchor": {"batch_size": 512, "B": 2048, "epsilon": 1.0},
             },
+            "full_source_batch_sizes": list(BATCH_SIZES),
             "verdict_rule": (
-                "VERIFIED iff PLD epsilon is below RDP epsilon at all 40 "
-                "full-parameter points with >=5% median improvement, the "
-                "representative target-epsilon PLD noise is below RDP noise, "
-                "all parameter identities and alpha=2 checks pass, and the "
-                "equal-accountant mutation is rejected."
+                "A shard can only certify its ten-point panel and leaves "
+                "overall Claim 6 BLOCKED. VERIFIED/FALSIFIED is assigned only "
+                "by the full-domain collector over all 40 points. Each shard "
+                "requires strict PLD improvement at every point, the target-"
+                "epsilon anchor, all identities and alpha=2 checks, and the "
+                "equal-accountant mutation."
             ),
         },
     )
@@ -367,12 +382,14 @@ current pinned author PLD release.
         out / "method.md",
         """# Method
 
-At each of the 40 source configurations, a full random-allocation PLD is built
-with `k=C/B` and `t=d/B`, transformed by the paper's PLD Poisson-subsampling
-rule, and composed for `ceil(n/batch_size)*E` updates. The multiplicative grid
-is capped at the paper's one million bins per direction. Independent grid
-points are scheduled across four CPU worker processes; this changes only wall
-time, not any accountant, parameter, result, or acceptance predicate.
+At each source configuration assigned to this run, a full random-allocation PLD
+is built with `k=C/B` and `t=d/B`, transformed by the paper's PLD
+Poisson-subsampling rule, and composed for `ceil(n/batch_size)*E` updates. Four
+batch-panel shards collectively cover all 40 source configurations. The
+multiplicative grid is capped at the paper's one million bins per direction.
+Independent grid points are scheduled across four CPU worker processes; this
+changes only wall time, not any accountant, parameter, result, or acceptance
+predicate.
 
 The independent RDP path implements the versioned paper experiment: exact
 integer remove-direction moments via a log-space generating function, the
@@ -433,13 +450,14 @@ directly checking the paper figure's required-noise interpretation.
     write_json(out / "exact_command_environment.json", metadata)
     write_text(
         out / "limitations.md",
-        """# Limitations and deviations
+        f"""# Limitations and deviations
 
-The full source parameter grid is evaluated without downscaling. The 40-point
-comparison fixes global sigma at 1 rather than solving 80 separate inverse
-problems; monotonicity makes this a direct test of which accountant gives the
-tighter privacy bound. One representative point also reproduces the inverse
-noise comparison at epsilon=1. The current released author code may differ
+{'The full 40-point source grid is evaluated in this run.' if FULL_DOMAIN else f'This run evaluates the complete ten-point batch={SHARD_VALUE} panel; overall Claim 6 remains BLOCKED until all four batch-panel shards are combined.'}
+No grid resolution or paper parameter is downscaled. The comparison fixes
+global sigma at 1 rather than solving 80 separate inverse problems;
+monotonicity makes this a direct test of which accountant gives the tighter
+privacy bound. One representative point also reproduces the inverse noise
+comparison at epsilon=1. The current released author code may differ
 numerically from the historical plotting checkout, so no pixel-level agreement
 with the raster figure is asserted.
 """,
@@ -448,9 +466,11 @@ with the raster figure is asserted.
         out / "EVAL.md",
         f"""# Claim 6 evaluation
 
-Verdict: **{'VERIFIED' if summary['passed'] else 'FALSIFIED'}**
+Verdict: **{summary['claim_6']}**
 
-- Full-scale configurations: {len(rows)}
+- Overall Claim 6 verdict: **{summary['claim_6']}**
+- Shard status: **{summary['claim_6_shard']}**
+- Full-scale configurations in this run: {len(rows)}
 - Median epsilon improvement over RDP: {summary['median_improvement']:.2%}
 - Minimum epsilon improvement over RDP: {summary['minimum_improvement']:.2%}
 - Anchor PLD/RDP noise ratio: {anchor['pld_to_rdp_sigma_ratio']:.6f}
@@ -464,7 +484,7 @@ def main() -> int:
     rows: list[dict[str, Any]] = []
     configurations = [
         (batch_size, block_size)
-        for batch_size in BATCH_SIZES
+        for batch_size in ACTIVE_BATCH_SIZES
         for block_size in BLOCK_SIZES
     ]
     with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
@@ -520,11 +540,15 @@ def main() -> int:
     }
 
     improvements = [row["relative_improvement"] for row in rows]
-    grid_ok = all(
+    pointwise_grid_ok = all(
         math.isfinite(row["pld_epsilon"])
         and row["pld_epsilon"] < row["rdp_epsilon"]
         for row in rows
-    ) and float(np.median(improvements)) >= 0.05
+    )
+    grid_ok = (
+        pointwise_grid_ok
+        and len(rows) == len(ACTIVE_BATCH_SIZES) * len(BLOCK_SIZES)
+    )
     identities_ok = all(
         row["t"] * row["B"] == D
         and row["k"] * row["B"] == C
@@ -540,20 +564,44 @@ def main() -> int:
         and anchor["pld_root_width"] <= 0.002
         and anchor["rdp_root_width"] <= 0.002
     )
-    negative_ok = not all(
-        row["rdp_epsilon"] < row["rdp_epsilon"] for row in rows
+    mutated_rows = [
+        {**row, "pld_epsilon": row["rdp_epsilon"]} for row in rows
+    ]
+    mutated_grid_ok = all(
+        math.isfinite(row["pld_epsilon"])
+        and row["pld_epsilon"] < row["rdp_epsilon"]
+        for row in mutated_rows
     )
-    passed = (
+    negative_ok = not mutated_grid_ok
+    shard_passed = (
         grid_ok
         and identities_ok
         and independent_ok
         and anchor_ok
         and negative_ok
     )
+    full_claim_passed = (
+        FULL_DOMAIN
+        and shard_passed
+        and len(rows) == len(BATCH_SIZES) * len(BLOCK_SIZES)
+        and float(np.median(improvements)) >= 0.05
+    )
+    full_claim_falsified = FULL_DOMAIN and not full_claim_passed
+    claim_verdict = (
+        "VERIFIED"
+        if full_claim_passed
+        else "FALSIFIED"
+        if full_claim_falsified
+        else "BLOCKED"
+    )
     runtime = time.perf_counter() - started
     summary = {
-        "claim_6": "VERIFIED" if passed else "FALSIFIED",
-        "passed": passed,
+        "claim_6": claim_verdict,
+        "claim_6_shard": "VERIFIED" if shard_passed else "FALSIFIED",
+        "passed": full_claim_passed,
+        "shard_passed": shard_passed,
+        "full_domain": FULL_DOMAIN,
+        "active_batch_sizes": list(ACTIVE_BATCH_SIZES),
         "full_scale_points": len(rows),
         "grid_ok": grid_ok,
         "parameter_identities_ok": identities_ok,
@@ -566,17 +614,25 @@ def main() -> int:
         "fixed_command": FIXED_COMMAND,
     }
     write_bundle(rows, anchor, summary, runtime)
-    write_json(ARTIFACTS / "claim_6_summary.json", summary)
-    write_json(
-        ARTIFACTS / "claim_6_manifest.json",
-        manifest(ARTIFACTS / "claim_6"),
+    summary_name = (
+        "claim_6_summary.json"
+        if FULL_DOMAIN
+        else f"claim_6_shard_{SHARD_VALUE}_summary.json"
     )
+    manifest_name = (
+        "claim_6_manifest.json"
+        if FULL_DOMAIN
+        else f"claim_6_shard_{SHARD_VALUE}_manifest.json"
+    )
+    write_json(ARTIFACTS / summary_name, summary)
+    artifact_manifest = manifest(ARTIFACT_DIR)
+    write_json(ARTIFACTS / manifest_name, artifact_manifest)
     print("=" * 78)
     print("FULL PREAMBLE ACCOUNTING CONTRACT")
     print("=" * 78)
     print(
-        f"Claim 6: {summary['claim_6']} across {len(rows)} "
-        "full-parameter points"
+        f"Claim 6: {summary['claim_6']}; shard: "
+        f"{summary['claim_6_shard']} across {len(rows)} full-parameter points"
     )
     print(
         f"median improvement={summary['median_improvement']:.2%}; "
@@ -588,5 +644,13 @@ def main() -> int:
         f"independent={independent_ok}, anchor={anchor_ok}, "
         f"negative control={negative_ok}"
     )
-    print(f"SUMMARY_JSON={summary}")
-    return 0 if passed else 1
+    print(
+        "RAW_RESULTS_JSON="
+        + json.dumps({"grid": rows, "anchor": anchor}, sort_keys=True)
+    )
+    print("SUMMARY_JSON=" + json.dumps(summary, sort_keys=True))
+    print(
+        "ARTIFACT_MANIFEST_JSON="
+        + json.dumps(artifact_manifest, sort_keys=True)
+    )
+    return 0 if shard_passed else 1
