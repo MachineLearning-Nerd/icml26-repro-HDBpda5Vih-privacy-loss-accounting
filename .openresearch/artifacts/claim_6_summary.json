@@ -1,0 +1,29 @@
+{
+  "anchor_certificate_sigma": 1.802490234375,
+  "anchor_ok": true,
+  "anchor_pld_epsilon": 0.2722999806456724,
+  "anchor_provenance_ok": true,
+  "anchor_rdp_epsilon": 1.0291950981464904,
+  "claim_6": "VERIFIED",
+  "evidence_valid": true,
+  "fixed_command": "uv run --frozen python repro/src/verify_pld.py",
+  "full_domain_ok": true,
+  "full_scale_points": 40,
+  "independent_checker_ok": true,
+  "maximum_improvement": 0.5658559065310355,
+  "median_improvement": 0.2654663433437164,
+  "minimum_improvement": 0.059908196964293246,
+  "negative_control_ok": true,
+  "parameter_identities_ok": true,
+  "passed": true,
+  "pointwise_improvement_ok": true,
+  "provenance_ok": true,
+  "runtime_seconds": 2.045041917008348,
+  "source_run_ids": [
+    "776a4d76-c031-4399-b8d8-0bb532876a7e",
+    "e2017506-0da3-46d6-b09a-bc024e8b4e3d",
+    "342daf11-a0f8-4fd0-81ed-3747c07fcf3e",
+    "80367c37-1c07-4d4b-afe2-4a99eb7a9c30",
+    "fe365c41-6a04-4ae0-8cfc-b5b3e1c2e7ef"
+  ]
+}

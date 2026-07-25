@@ -1,0 +1,610 @@
+{
+  "checks": [
+    {
+      "direct_atoms": 2,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 2,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 2,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 2,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 1
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 1
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 2
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 2
+    },
+    {
+      "direct_atoms": 10,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 10,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 3
+    },
+    {
+      "direct_atoms": 10,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 10,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 3
+    },
+    {
+      "direct_atoms": 15,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 15,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 4
+    },
+    {
+      "direct_atoms": 15,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 15,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 4
+    },
+    {
+      "direct_atoms": 20,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 20,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 5
+    },
+    {
+      "direct_atoms": 20,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 20,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 5
+    }
+  ],
+  "negative_controls": [
+    {
+      "direction": "remove",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 1
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 1
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 2
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 2
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 3
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 3
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 4
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 4
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 5
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_asymmetric",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 5
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 1
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 1
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 2
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 2
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 3
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 3
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 4
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 4
+    },
+    {
+      "direction": "remove",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 5
+    },
+    {
+      "direction": "add",
+      "mechanism": "binary_strong",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 5
+    },
+    {
+      "direction": "remove",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 1
+    },
+    {
+      "direction": "add",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 1
+    },
+    {
+      "direction": "remove",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 2
+    },
+    {
+      "direction": "add",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 2
+    },
+    {
+      "direction": "remove",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 3
+    },
+    {
+      "direction": "add",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 3
+    },
+    {
+      "direction": "remove",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 4
+    },
+    {
+      "direction": "add",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 4
+    },
+    {
+      "direction": "remove",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 5
+    },
+    {
+      "direction": "add",
+      "mechanism": "ternary",
+      "mutation": "replace denominator t by t+1",
+      "rejected": true,
+      "t": 5
+    }
+  ],
+  "representative_exact_pmfs": [
+    {
+      "direct": [
+        {
+          "likelihood_ratio": "5/9",
+          "mass": "3/25"
+        },
+        {
+          "likelihood_ratio": "25/27",
+          "mass": "2/5"
+        },
+        {
+          "likelihood_ratio": "35/27",
+          "mass": "28/75"
+        },
+        {
+          "likelihood_ratio": "5/3",
+          "mass": "8/75"
+        }
+      ],
+      "direction": "remove",
+      "formula": [
+        {
+          "likelihood_ratio": "5/9",
+          "mass": "3/25"
+        },
+        {
+          "likelihood_ratio": "25/27",
+          "mass": "2/5"
+        },
+        {
+          "likelihood_ratio": "35/27",
+          "mass": "28/75"
+        },
+        {
+          "likelihood_ratio": "5/3",
+          "mass": "8/75"
+        }
+      ]
+    },
+    {
+      "direct": [
+        {
+          "likelihood_ratio": "3/5",
+          "mass": "8/125"
+        },
+        {
+          "likelihood_ratio": "27/35",
+          "mass": "36/125"
+        },
+        {
+          "likelihood_ratio": "27/25",
+          "mass": "54/125"
+        },
+        {
+          "likelihood_ratio": "9/5",
+          "mass": "27/125"
+        }
+      ],
+      "direction": "add",
+      "formula": [
+        {
+          "likelihood_ratio": "3/5",
+          "mass": "8/125"
+        },
+        {
+          "likelihood_ratio": "27/35",
+          "mass": "36/125"
+        },
+        {
+          "likelihood_ratio": "27/25",
+          "mass": "54/125"
+        },
+        {
+          "likelihood_ratio": "9/5",
+          "mass": "27/125"
+        }
+      ]
+    }
+  ],
+  "scope_checks": [
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 3
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 3
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 4
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 4
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 5
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 5
+    }
+  ]
+}

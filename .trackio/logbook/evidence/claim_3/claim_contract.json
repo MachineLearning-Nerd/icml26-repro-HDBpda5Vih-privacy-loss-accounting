@@ -1,0 +1,7 @@
+{
+  "claim_id": 3,
+  "domain": "lambda in (0,1]; positive finite P,Q used for exhaustive checks.",
+  "machine_check": "Direct PLDs of (P_lambda,Q) and (Q,P_lambda) equal transformed base PLDs exactly; supports and PLD-realization invariant hold; allocation output can be subsampled through the same interface.",
+  "source_statement": "Theorem 3.3 exact remove/add phi_lambda transformations on PLD realizations.",
+  "verdict_rule": "VERIFIED iff all exact equalities/invariants hold and every map mutation is rejected."
+}

@@ -1,0 +1,251 @@
+{
+  "checks": [
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1/10",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1/10",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1/3",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1/3",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "3/4",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "3/4",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1",
+      "mechanism": "binary_asymmetric",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1/10",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1/10",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1/3",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1/3",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "3/4",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "3/4",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1",
+      "mechanism": "binary_strong",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1/10",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1/10",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1/3",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1/3",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "3/4",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "3/4",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1",
+      "mechanism": "ternary",
+      "pld_realization_expectation": "1",
+      "realization_ok": true,
+      "support_ok": true
+    }
+  ],
+  "method": "direct mixture-pair PLD versus grouped base-PLD transformation",
+  "unified_checks": [
+    {
+      "atoms": 4,
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "1/5",
+      "t": 3
+    },
+    {
+      "atoms": 4,
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "1/5",
+      "t": 3
+    },
+    {
+      "atoms": 4,
+      "direction": "remove",
+      "exact_equal": true,
+      "lambda": "2/3",
+      "t": 3
+    },
+    {
+      "atoms": 4,
+      "direction": "add",
+      "exact_equal": true,
+      "lambda": "2/3",
+      "t": 3
+    }
+  ]
+}

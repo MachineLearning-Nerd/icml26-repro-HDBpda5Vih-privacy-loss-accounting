@@ -1,0 +1,35 @@
+{
+  "baseline_judge_score": "0/12",
+  "baseline_hf_revision": "a46281836019c0d975485c52eb4f22b93b0ced3f",
+  "baseline_judge_revision": "a46281836019c0d975485c52eb4f22b93b0ced3f",
+  "cumulative_run_id": "17c05d46-57c7-4400-8fa6-147b669de61f",
+  "cumulative_git_sha": "1eb57c864b5280952dbe86739fe4b869f69d10b4",
+  "cumulative_duration": "3h44m",
+  "fixed_command": "uv run --frozen python repro/src/verify_pld.py",
+  "claim_verdicts": {
+    "1": "VERIFIED",
+    "2": "VERIFIED",
+    "3": "VERIFIED",
+    "4": "VERIFIED",
+    "5": "VERIFIED",
+    "6": "VERIFIED"
+  },
+  "cumulative_status": {
+    "claims_1_3": 0,
+    "claim_2": 0,
+    "claim_4": 0,
+    "claim_5": 0,
+    "claim_6": 0
+  },
+  "cumulative_log": {
+    "bytes": 100751,
+    "sha256": "9ab71560eccf1b1f66e9aa1cce4f99970f41939bcfa0edca0b330bec025ad2ee"
+  },
+  "claim6_anchor_log": {
+    "bytes": 13771,
+    "sha256": "a4c09319ffedf9108b20254e8373e09a6c3abadfc4b5ea491741ac85089c16a9"
+  },
+  "hf_cpu_upgrade_minutes": 5285,
+  "hf_cpu_upgrade_estimated_usd": 2.6425,
+  "gpu_used": false
+}

@@ -1,0 +1,170 @@
+[
+  {
+    "direction": "remove",
+    "lambda": "1/10",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1/10",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1/3",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1/3",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "3/4",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "3/4",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1",
+    "mechanism": "binary_asymmetric",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1/10",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1/10",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1/3",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1/3",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "3/4",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "3/4",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1",
+    "mechanism": "binary_strong",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1/10",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1/10",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1/3",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1/3",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "3/4",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "3/4",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "remove",
+    "lambda": "1",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  },
+  {
+    "direction": "add",
+    "lambda": "1",
+    "mechanism": "ternary",
+    "mutation": "incorrect affine likelihood-ratio map",
+    "rejected": true
+  }
+]

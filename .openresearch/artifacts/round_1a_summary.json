@@ -1,0 +1,6 @@
+{
+  "claim_1": "VERIFIED",
+  "claim_3": "VERIFIED",
+  "fixed_command": "uv run --frozen python repro/src/verify_pld.py",
+  "runtime_seconds": 0.18170454099890776
+}

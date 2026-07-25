@@ -1,0 +1,12 @@
+{
+  "claim_id": 2,
+  "machine_checks": [
+    "Exact independent multinomial sum versus released geometric self-convolution.",
+    "CCDF validity and (alpha,beta) inequalities at every atom boundary.",
+    "Exact exponentiation-by-squaring call count floor(log2 t)+popcount(t)-1.",
+    "Primitive pair-product work scaling in log(t)^3 and alpha^-2.",
+    "Released Gaussian upper/lower epsilon gap no greater than 2 alpha."
+  ],
+  "source_statement": "Theorem 4.6 validity, (alpha,beta)-tightness, and O((IQR/alpha)^2 log^3(t)) runtime; Gaussian specialization adds log(t/beta)/sigma^2.",
+  "verdict_rule": "VERIFIED iff all accuracy, operation-count, scaling, released-path checks pass and lower-rounding mutations are rejected."
+}

@@ -1,0 +1,319 @@
+{
+  "checks": [
+    {
+      "direct_atoms": 2,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 2,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_asymmetric",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 2,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 2,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 2,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 1
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 2
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 4,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 4,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 3
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 5,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 5,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 4
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "binary_strong",
+      "support": 2,
+      "t": 5
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 1
+    },
+    {
+      "direct_atoms": 3,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 3,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 1
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 2
+    },
+    {
+      "direct_atoms": 6,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 6,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 2
+    },
+    {
+      "direct_atoms": 10,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 10,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 3
+    },
+    {
+      "direct_atoms": 10,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 10,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 3
+    },
+    {
+      "direct_atoms": 15,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 15,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 4
+    },
+    {
+      "direct_atoms": 15,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 15,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 4
+    },
+    {
+      "direct_atoms": 20,
+      "direction": "remove",
+      "exact_equal": true,
+      "formula_atoms": 20,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 5
+    },
+    {
+      "direct_atoms": 20,
+      "direction": "add",
+      "exact_equal": true,
+      "formula_atoms": 20,
+      "mechanism": "ternary",
+      "support": 3,
+      "t": 5
+    }
+  ],
+  "method": "direct Pbar_t/Q^t enumeration versus theorem formula",
+  "scope_checks": [
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 3
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 3
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 4
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 4
+    },
+    {
+      "direction": "remove",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 5
+    },
+    {
+      "direction": "add",
+      "exact_equal": true,
+      "k": 2,
+      "note": "supporting identity; not attributed to Theorem 4.4",
+      "t": 5
+    }
+  ]
+}

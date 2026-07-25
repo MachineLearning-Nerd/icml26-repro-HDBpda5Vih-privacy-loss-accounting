@@ -1,0 +1,22 @@
+{
+  "judged_revision": "a46281836019c0d975485c52eb4f22b93b0ced3f",
+  "old_path_count": 17,
+  "candidate_path_count": 105,
+  "missing_old_path_count": 0,
+  "old_file_set_is_subset": true,
+  "old_pages_byte_preserved": true,
+  "intentionally_extended_existing_text_paths": [
+    "README.md",
+    "logbook.json"
+  ],
+  "new_or_changed_upload_path_count": 90,
+  "upload_is_text_only": true,
+  "upload_mime_counts": {
+    "application/json": 36,
+    "text/csv": 13,
+    "text/plain": 41
+  },
+  "secret_signature_matches": 0,
+  "allowlist_sha256": "d4ba48e0f1b40faea4ef24102f22983dbf07ae4fdba56773d02f6b6a26cd10b3",
+  "allowlist_content_manifest_sha256": "baed54c0a440669ec31a8e64ceb1f3e7da9fdd398061bdb1f921062c51c1e041"
+}

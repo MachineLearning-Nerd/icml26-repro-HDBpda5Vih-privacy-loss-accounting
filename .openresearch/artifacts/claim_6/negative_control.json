@@ -1,0 +1,7 @@
+{
+  "anchor_mutation_rejected": true,
+  "equal_accountant_mutation_rejected": true,
+  "missing_grid_point_rejected": true,
+  "passed": true,
+  "rdp_plus_0_01_mutation_rejected": true
+}

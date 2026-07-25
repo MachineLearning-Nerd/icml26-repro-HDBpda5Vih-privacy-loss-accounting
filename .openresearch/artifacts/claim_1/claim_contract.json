@@ -1,0 +1,8 @@
+{
+  "claim_id": 1,
+  "domain": "t in positive integers; any PLD realization induced here by positive finite P,Q.",
+  "machine_check": "Direct product-space likelihood-ratio PMFs equal independent exponentiated-PLD formula PMFs exactly in Fraction arithmetic for both directions.",
+  "scope_qualification": "The theorem states k=1. General k uses Lemma 2.8; k=2 elementary-symmetric checks are supporting evidence, not misattributed to Theorem 4.4.",
+  "source_statement": "Theorem 4.4 exact add/remove PLD identities for 1-out-of-t allocation.",
+  "verdict_rule": "VERIFIED iff every exact equality holds and every denominator mutation is rejected."
+}

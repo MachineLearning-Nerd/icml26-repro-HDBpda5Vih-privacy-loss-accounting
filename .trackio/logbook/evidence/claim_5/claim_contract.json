@@ -1,0 +1,31 @@
+{
+  "claim_id": 5,
+  "quantifiers": {
+    "privacy_settings": [
+      {
+        "dimension": 1,
+        "epsilon": 1.0
+      },
+      {
+        "dimension": 1,
+        "epsilon": 0.1
+      },
+      {
+        "dimension": 1000,
+        "epsilon": 0.1
+      }
+    ],
+    "required_relationship": "allocation upper-bound sigma < Poisson upper-bound sigma, and allocation analytic MSE < Poisson analytic MSE",
+    "sample_size_sweep": [
+      100,
+      316,
+      1000,
+      3162,
+      10000,
+      31622,
+      100000
+    ]
+  },
+  "source_statement": "Figure 4 repeats the FS25 Bernoulli mean-estimation experiment with t=1000, p=0.9, delta=1e-10 and reports lower required noise and MSE for random allocation in all three panels.",
+  "verdict_rule": "VERIFIED iff the noise ordering holds at both numerical resolutions in every panel, the fine-resolution separation exceeds the measured convergence and bisection envelope, the exact-MSE ordering holds over the full n sweep, seeded Monte Carlo agrees with the exact formulas, and the mutation is rejected."
+}

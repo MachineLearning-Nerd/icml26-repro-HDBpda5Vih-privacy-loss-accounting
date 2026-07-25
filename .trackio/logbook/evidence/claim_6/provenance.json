@@ -1,0 +1,125 @@
+{
+  "anchor": {
+    "checks": {
+      "commit_sha": true,
+      "excerpt_sha256": true,
+      "fixed_command": true,
+      "full_log_bytes": true,
+      "full_log_sha256": true,
+      "negative_control": true,
+      "parameters": true,
+      "raw_line_in_excerpt": true,
+      "rdp_bracket": true,
+      "run_id": true,
+      "strict_advantage": true,
+      "terminal_status_done": true
+    },
+    "source": {
+      "commit_sha": "6aa326b9b78a3d837ed21384b9e3994f6239ba5b",
+      "excerpt_sha256": "5d18f3553a75cce8a5e921549d79efc08fd69ed7d289ee2faf4c461a3b82633e",
+      "full_log_bytes": 13771,
+      "full_log_sha256": "a4c09319ffedf9108b20254e8373e09a6c3abadfc4b5ea491741ac85089c16a9",
+      "retrieved_at": "2026-07-25T05:22:15+05:30",
+      "run_id": "fe365c41-6a04-4ae0-8cfc-b5b3e1c2e7ef",
+      "terminal_status": "done"
+    }
+  },
+  "grid": [
+    {
+      "accepted_as_successful_run": false,
+      "accepted_scope": "ten complete pre-terminal grid lines only",
+      "batch_size": 512,
+      "checks": {
+        "commit_sha": true,
+        "excerpt_sha256": true,
+        "full_log_bytes": true,
+        "full_log_sha256": true,
+        "post_grid_terminal_is_explicit": true,
+        "run_id": true,
+        "single_batch_panel": true,
+        "ten_grid_lines_before_terminal": true,
+        "terminal_status": true
+      },
+      "source": {
+        "batch_size": 512,
+        "commit_sha": "f72e5377e6dcfea862c3d9ea50f78a85886cfdee",
+        "full_log_bytes": 13390,
+        "full_log_sha256": "3ae403a90202270c7d410bc2dbbe293630e31f2236a3e9f6a123be41edade185",
+        "run_id": "776a4d76-c031-4399-b8d8-0bb532876a7e",
+        "terminal_status": "failed"
+      }
+    },
+    {
+      "accepted_as_successful_run": false,
+      "accepted_scope": "ten complete pre-terminal grid lines only",
+      "batch_size": 1028,
+      "checks": {
+        "commit_sha": true,
+        "excerpt_sha256": true,
+        "full_log_bytes": true,
+        "full_log_sha256": true,
+        "post_grid_terminal_is_explicit": true,
+        "run_id": true,
+        "single_batch_panel": true,
+        "ten_grid_lines_before_terminal": true,
+        "terminal_status": true
+      },
+      "source": {
+        "batch_size": 1028,
+        "commit_sha": "955357b7683ad0dbc0b118c28a2896f8ea585e1a",
+        "full_log_bytes": 11722,
+        "full_log_sha256": "8a7b513fd60513ccf27991f3ae0b8a1dada3cb955e4b4e39ce3421bde2f7f972",
+        "run_id": "e2017506-0da3-46d6-b09a-bc024e8b4e3d",
+        "terminal_status": "cancelled"
+      }
+    },
+    {
+      "accepted_as_successful_run": false,
+      "accepted_scope": "ten complete pre-terminal grid lines only",
+      "batch_size": 4096,
+      "checks": {
+        "commit_sha": true,
+        "excerpt_sha256": true,
+        "full_log_bytes": true,
+        "full_log_sha256": true,
+        "post_grid_terminal_is_explicit": true,
+        "run_id": true,
+        "single_batch_panel": true,
+        "ten_grid_lines_before_terminal": true,
+        "terminal_status": true
+      },
+      "source": {
+        "batch_size": 4096,
+        "commit_sha": "6f5a5af00841af3292ab8c5d2b16c09522760a27",
+        "full_log_bytes": 11714,
+        "full_log_sha256": "66131bf189422491e8a92a3cd12697457f261e6dc87c1d4b8fab893c2000c140",
+        "run_id": "342daf11-a0f8-4fd0-81ed-3747c07fcf3e",
+        "terminal_status": "cancelled"
+      }
+    },
+    {
+      "accepted_as_successful_run": false,
+      "accepted_scope": "ten complete pre-terminal grid lines only",
+      "batch_size": 600000,
+      "checks": {
+        "commit_sha": true,
+        "excerpt_sha256": true,
+        "full_log_bytes": true,
+        "full_log_sha256": true,
+        "post_grid_terminal_is_explicit": true,
+        "run_id": true,
+        "single_batch_panel": true,
+        "ten_grid_lines_before_terminal": true,
+        "terminal_status": true
+      },
+      "source": {
+        "batch_size": 600000,
+        "commit_sha": "5cf09b8e65bfb0e5d7c66aad5338af7847ddf48d",
+        "full_log_bytes": 13413,
+        "full_log_sha256": "aea8243787dac4b847b2972ed7f376075fd05996e7e194b912a6fad77b659a66",
+        "run_id": "80367c37-1c07-4d4b-afe2-4a99eb7a9c30",
+        "terminal_status": "failed"
+      }
+    }
+  ]
+}

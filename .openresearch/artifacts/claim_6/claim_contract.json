@@ -1,0 +1,35 @@
+{
+  "claim_id": 6,
+  "source_quantifiers": {
+    "C": 32768,
+    "batch_sizes": [
+      512,
+      1028,
+      4096,
+      600000
+    ],
+    "block_sizes": [
+      4,
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "d": 1048576,
+    "delta": 1e-06,
+    "epochs": 10,
+    "max_grid_mult": 1000000,
+    "n": 600000
+  },
+  "verdicts": [
+    "VERIFIED",
+    "FALSIFIED",
+    "BLOCKED"
+  ],
+  "verification_rule": "VERIFIED only if provenance-bound stdout contains the exact 40-point source domain, PLD epsilon is strictly below RDP epsilon at every point, an epsilon=1 certificate proves strictly lower required PLD noise, independent RDP and identity checks pass, and all negative controls are rejected. A direct valid grid counterexample is FALSIFIED; incomplete or invalid evidence is BLOCKED."
+}

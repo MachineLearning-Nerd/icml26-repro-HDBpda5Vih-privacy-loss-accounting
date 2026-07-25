@@ -1,0 +1,1089 @@
+{
+  "fast_convolution_checks": [
+    {
+      "alpha": 0.3,
+      "alpha_beta_tight": true,
+      "beta": 0.0,
+      "call_trace": [
+        {
+          "left_bins": 15,
+          "output_bins": 15,
+          "pair_products": 225,
+          "right_bins": 15
+        },
+        {
+          "left_bins": 15,
+          "output_bins": 15,
+          "pair_products": 225,
+          "right_bins": 15
+        }
+      ],
+      "exact_checked": true,
+      "exact_mass": 1.0,
+      "expected_convolution_calls": 2,
+      "input_bins": 15,
+      "negative_control": {
+        "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+        "rejected": true,
+        "validity_max_violation": 0.27735
+      },
+      "observed_convolution_calls": 2,
+      "output_bins": 15,
+      "primitive_pair_products": 450,
+      "runtime_seconds": 0.0003215829929104075,
+      "stage_log_grid_step": 0.15,
+      "t": 3,
+      "thresholds_checked": 81,
+      "tightness_max_violation": 1.1102230246251565e-16,
+      "upper_mass": 1.0,
+      "valid": true,
+      "validity_max_violation": 0.0
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": true,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 33,
+          "output_bins": 32,
+          "pair_products": 1089,
+          "right_bins": 33
+        },
+        {
+          "left_bins": 32,
+          "output_bins": 32,
+          "pair_products": 1024,
+          "right_bins": 32
+        },
+        {
+          "left_bins": 33,
+          "output_bins": 32,
+          "pair_products": 1056,
+          "right_bins": 32
+        }
+      ],
+      "exact_checked": true,
+      "exact_mass": 0.9999999999999999,
+      "expected_convolution_calls": 3,
+      "input_bins": 33,
+      "negative_control": {
+        "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+        "rejected": true,
+        "validity_max_violation": 0.21437749759999997
+      },
+      "observed_convolution_calls": 3,
+      "output_bins": 32,
+      "primitive_pair_products": 3169,
+      "runtime_seconds": 0.0010968340066028759,
+      "stage_log_grid_step": 0.06666666666666667,
+      "t": 5,
+      "thresholds_checked": 222,
+      "tightness_max_violation": 0.0,
+      "upper_mass": 1.0,
+      "valid": true,
+      "validity_max_violation": 1.3877787807814457e-17
+    },
+    {
+      "alpha": 0.15,
+      "alpha_beta_tight": true,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 43,
+          "output_bins": 43,
+          "pair_products": 1849,
+          "right_bins": 43
+        },
+        {
+          "left_bins": 43,
+          "output_bins": 43,
+          "pair_products": 1849,
+          "right_bins": 43
+        },
+        {
+          "left_bins": 43,
+          "output_bins": 39,
+          "pair_products": 1849,
+          "right_bins": 43
+        }
+      ],
+      "exact_checked": true,
+      "exact_mass": 1.0,
+      "expected_convolution_calls": 3,
+      "input_bins": 43,
+      "negative_control": {
+        "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+        "rejected": true,
+        "validity_max_violation": 0.16479758631955882
+      },
+      "observed_convolution_calls": 3,
+      "output_bins": 39,
+      "primitive_pair_products": 5547,
+      "runtime_seconds": 0.0005151250079507008,
+      "stage_log_grid_step": 0.049999999999999996,
+      "t": 8,
+      "thresholds_checked": 572,
+      "tightness_max_violation": 0.0,
+      "upper_mass": 1.0,
+      "valid": true,
+      "validity_max_violation": 1.1102230246251565e-16
+    },
+    {
+      "alpha": 0.1,
+      "alpha_beta_tight": true,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7225,
+          "right_bins": 85
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 78,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 67,
+          "pair_products": 6552,
+          "right_bins": 78
+        }
+      ],
+      "exact_checked": true,
+      "exact_mass": 0.9999999999999999,
+      "expected_convolution_calls": 4,
+      "input_bins": 85,
+      "negative_control": {
+        "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+        "rejected": true,
+        "validity_max_violation": 0.14057292325574572
+      },
+      "observed_convolution_calls": 4,
+      "output_bins": 67,
+      "primitive_pair_products": 27889,
+      "runtime_seconds": 0.0011725000076694414,
+      "stage_log_grid_step": 0.025,
+      "t": 12,
+      "thresholds_checked": 1511,
+      "tightness_max_violation": 0.0,
+      "upper_mass": 1.0,
+      "valid": true,
+      "validity_max_violation": 1.6263032587282567e-19
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 33,
+          "output_bins": 32,
+          "pair_products": 1089,
+          "right_bins": 33
+        },
+        {
+          "left_bins": 32,
+          "output_bins": 32,
+          "pair_products": 1024,
+          "right_bins": 32
+        },
+        {
+          "left_bins": 32,
+          "output_bins": 29,
+          "pair_products": 1024,
+          "right_bins": 32
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 3,
+      "input_bins": 33,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 3,
+      "output_bins": 29,
+      "primitive_pair_products": 3137,
+      "runtime_seconds": 0.0008049579919315875,
+      "stage_log_grid_step": 0.06666666666666667,
+      "t": 8,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 43,
+          "output_bins": 43,
+          "pair_products": 1849,
+          "right_bins": 43
+        },
+        {
+          "left_bins": 43,
+          "output_bins": 43,
+          "pair_products": 1849,
+          "right_bins": 43
+        },
+        {
+          "left_bins": 43,
+          "output_bins": 39,
+          "pair_products": 1849,
+          "right_bins": 43
+        },
+        {
+          "left_bins": 39,
+          "output_bins": 30,
+          "pair_products": 1521,
+          "right_bins": 39
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 4,
+      "input_bins": 43,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 4,
+      "output_bins": 30,
+      "primitive_pair_products": 7068,
+      "runtime_seconds": 0.0007317499985219911,
+      "stage_log_grid_step": 0.05,
+      "t": 16,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 53,
+          "output_bins": 53,
+          "pair_products": 2809,
+          "right_bins": 53
+        },
+        {
+          "left_bins": 53,
+          "output_bins": 53,
+          "pair_products": 2809,
+          "right_bins": 53
+        },
+        {
+          "left_bins": 53,
+          "output_bins": 49,
+          "pair_products": 2809,
+          "right_bins": 53
+        },
+        {
+          "left_bins": 49,
+          "output_bins": 38,
+          "pair_products": 2401,
+          "right_bins": 49
+        },
+        {
+          "left_bins": 38,
+          "output_bins": 27,
+          "pair_products": 1444,
+          "right_bins": 38
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 5,
+      "input_bins": 53,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 5,
+      "output_bins": 27,
+      "primitive_pair_products": 12272,
+      "runtime_seconds": 0.000993790992652066,
+      "stage_log_grid_step": 0.04,
+      "t": 32,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 64,
+          "output_bins": 63,
+          "pair_products": 4096,
+          "right_bins": 64
+        },
+        {
+          "left_bins": 63,
+          "output_bins": 63,
+          "pair_products": 3969,
+          "right_bins": 63
+        },
+        {
+          "left_bins": 63,
+          "output_bins": 63,
+          "pair_products": 3969,
+          "right_bins": 63
+        },
+        {
+          "left_bins": 63,
+          "output_bins": 45,
+          "pair_products": 3969,
+          "right_bins": 63
+        },
+        {
+          "left_bins": 45,
+          "output_bins": 33,
+          "pair_products": 2025,
+          "right_bins": 45
+        },
+        {
+          "left_bins": 33,
+          "output_bins": 23,
+          "pair_products": 1089,
+          "right_bins": 33
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 64,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 23,
+      "primitive_pair_products": 19117,
+      "runtime_seconds": 0.0009967919904738665,
+      "stage_log_grid_step": 0.03333333333333333,
+      "t": 64,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 74,
+          "output_bins": 74,
+          "pair_products": 5476,
+          "right_bins": 74
+        },
+        {
+          "left_bins": 74,
+          "output_bins": 74,
+          "pair_products": 5476,
+          "right_bins": 74
+        },
+        {
+          "left_bins": 74,
+          "output_bins": 74,
+          "pair_products": 5476,
+          "right_bins": 74
+        },
+        {
+          "left_bins": 74,
+          "output_bins": 55,
+          "pair_products": 5476,
+          "right_bins": 74
+        },
+        {
+          "left_bins": 55,
+          "output_bins": 40,
+          "pair_products": 3025,
+          "right_bins": 55
+        },
+        {
+          "left_bins": 40,
+          "output_bins": 28,
+          "pair_products": 1600,
+          "right_bins": 40
+        },
+        {
+          "left_bins": 28,
+          "output_bins": 20,
+          "pair_products": 784,
+          "right_bins": 28
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 7,
+      "input_bins": 74,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 7,
+      "output_bins": 20,
+      "primitive_pair_products": 27313,
+      "runtime_seconds": 0.001338749993010424,
+      "stage_log_grid_step": 0.028571428571428574,
+      "t": 128,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7225,
+          "right_bins": 85
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 63,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 63,
+          "output_bins": 46,
+          "pair_products": 3969,
+          "right_bins": 63
+        },
+        {
+          "left_bins": 46,
+          "output_bins": 33,
+          "pair_products": 2116,
+          "right_bins": 46
+        },
+        {
+          "left_bins": 33,
+          "output_bins": 23,
+          "pair_products": 1089,
+          "right_bins": 33
+        },
+        {
+          "left_bins": 23,
+          "output_bins": 16,
+          "pair_products": 529,
+          "right_bins": 23
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 8,
+      "input_bins": 85,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 8,
+      "output_bins": 16,
+      "primitive_pair_products": 36096,
+      "runtime_seconds": 0.0018426659953547642,
+      "stage_log_grid_step": 0.025,
+      "t": 256,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.4,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 33,
+          "output_bins": 32,
+          "pair_products": 1089,
+          "right_bins": 33
+        },
+        {
+          "left_bins": 32,
+          "output_bins": 32,
+          "pair_products": 1024,
+          "right_bins": 32
+        },
+        {
+          "left_bins": 32,
+          "output_bins": 32,
+          "pair_products": 1024,
+          "right_bins": 32
+        },
+        {
+          "left_bins": 32,
+          "output_bins": 23,
+          "pair_products": 1024,
+          "right_bins": 32
+        },
+        {
+          "left_bins": 23,
+          "output_bins": 16,
+          "pair_products": 529,
+          "right_bins": 23
+        },
+        {
+          "left_bins": 16,
+          "output_bins": 12,
+          "pair_products": 256,
+          "right_bins": 16
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 33,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 12,
+      "primitive_pair_products": 4946,
+      "runtime_seconds": 0.001851084001827985,
+      "stage_log_grid_step": 0.06666666666666667,
+      "t": 64,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.2,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 64,
+          "output_bins": 63,
+          "pair_products": 4096,
+          "right_bins": 64
+        },
+        {
+          "left_bins": 63,
+          "output_bins": 63,
+          "pair_products": 3969,
+          "right_bins": 63
+        },
+        {
+          "left_bins": 63,
+          "output_bins": 63,
+          "pair_products": 3969,
+          "right_bins": 63
+        },
+        {
+          "left_bins": 63,
+          "output_bins": 45,
+          "pair_products": 3969,
+          "right_bins": 63
+        },
+        {
+          "left_bins": 45,
+          "output_bins": 33,
+          "pair_products": 2025,
+          "right_bins": 45
+        },
+        {
+          "left_bins": 33,
+          "output_bins": 23,
+          "pair_products": 1089,
+          "right_bins": 33
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 64,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 23,
+      "primitive_pair_products": 19117,
+      "runtime_seconds": 0.0022104999952716753,
+      "stage_log_grid_step": 0.03333333333333333,
+      "t": 64,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.1,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 126,
+          "output_bins": 126,
+          "pair_products": 15876,
+          "right_bins": 126
+        },
+        {
+          "left_bins": 126,
+          "output_bins": 126,
+          "pair_products": 15876,
+          "right_bins": 126
+        },
+        {
+          "left_bins": 126,
+          "output_bins": 126,
+          "pair_products": 15876,
+          "right_bins": 126
+        },
+        {
+          "left_bins": 126,
+          "output_bins": 93,
+          "pair_products": 15876,
+          "right_bins": 126
+        },
+        {
+          "left_bins": 93,
+          "output_bins": 68,
+          "pair_products": 8649,
+          "right_bins": 93
+        },
+        {
+          "left_bins": 68,
+          "output_bins": 47,
+          "pair_products": 4624,
+          "right_bins": 68
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 126,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 47,
+      "primitive_pair_products": 76777,
+      "runtime_seconds": 0.003164249996189028,
+      "stage_log_grid_step": 0.016666666666666666,
+      "t": 64,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.05,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 251,
+          "output_bins": 251,
+          "pair_products": 63001,
+          "right_bins": 251
+        },
+        {
+          "left_bins": 251,
+          "output_bins": 251,
+          "pair_products": 63001,
+          "right_bins": 251
+        },
+        {
+          "left_bins": 251,
+          "output_bins": 251,
+          "pair_products": 63001,
+          "right_bins": 251
+        },
+        {
+          "left_bins": 251,
+          "output_bins": 187,
+          "pair_products": 63001,
+          "right_bins": 251
+        },
+        {
+          "left_bins": 187,
+          "output_bins": 134,
+          "pair_products": 34969,
+          "right_bins": 187
+        },
+        {
+          "left_bins": 134,
+          "output_bins": 93,
+          "pair_products": 17956,
+          "right_bins": 134
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 251,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 93,
+      "primitive_pair_products": 304929,
+      "runtime_seconds": 0.020450583004276268,
+      "stage_log_grid_step": 0.008333333333333333,
+      "t": 64,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.15,
+      "alpha_beta_tight": null,
+      "beta": 0.0,
+      "call_trace": [
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7225,
+          "right_bins": 85
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7140,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 85,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 84,
+      "primitive_pair_products": 42589,
+      "runtime_seconds": 0.0020846249972237274,
+      "stage_log_grid_step": 0.024999999999999998,
+      "t": 21,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.15,
+      "alpha_beta_tight": null,
+      "beta": 1e-08,
+      "call_trace": [
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7225,
+          "right_bins": 85
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7140,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 78,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 78,
+          "output_bins": 60,
+          "pair_products": 6084,
+          "right_bins": 78
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 53,
+          "pair_products": 5040,
+          "right_bins": 60
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 85,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 53,
+      "primitive_pair_products": 39601,
+      "runtime_seconds": 0.002776833003736101,
+      "stage_log_grid_step": 0.024999999999999998,
+      "t": 21,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    },
+    {
+      "alpha": 0.15,
+      "alpha_beta_tight": null,
+      "beta": 1e-05,
+      "call_trace": [
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7225,
+          "right_bins": 85
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 84,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 85,
+          "output_bins": 84,
+          "pair_products": 7140,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 67,
+          "pair_products": 7056,
+          "right_bins": 84
+        },
+        {
+          "left_bins": 67,
+          "output_bins": 49,
+          "pair_products": 4489,
+          "right_bins": 67
+        },
+        {
+          "left_bins": 84,
+          "output_bins": 42,
+          "pair_products": 4116,
+          "right_bins": 49
+        }
+      ],
+      "exact_checked": false,
+      "exact_mass": null,
+      "expected_convolution_calls": 6,
+      "input_bins": 85,
+      "negative_control": {
+        "mutation": "not run: operation-count-only scaling case",
+        "rejected": null,
+        "validity_max_violation": null
+      },
+      "observed_convolution_calls": 6,
+      "output_bins": 42,
+      "primitive_pair_products": 37082,
+      "runtime_seconds": 0.0011335000017425045,
+      "stage_log_grid_step": 0.024999999999999998,
+      "t": 21,
+      "thresholds_checked": 0,
+      "tightness_max_violation": null,
+      "upper_mass": 1.0,
+      "valid": null,
+      "validity_max_violation": null
+    }
+  ],
+  "released_gaussian_checks": [
+    {
+      "alpha": 0.2,
+      "beta": 1e-08,
+      "delta": 1e-05,
+      "epsilon_gap": 0.13257420607159692,
+      "epsilon_lower": 0.4154570478345531,
+      "epsilon_upper": 0.54803125390615,
+      "gap_bound_2alpha": 0.4,
+      "gap_within_2alpha": true,
+      "ordered": true,
+      "runtime_seconds": 0.2970213750086259,
+      "sigma": 2.0,
+      "t": 16
+    },
+    {
+      "alpha": 0.1,
+      "beta": 1e-08,
+      "delta": 1e-05,
+      "epsilon_gap": 0.0660597693138057,
+      "epsilon_lower": 0.4448811288514752,
+      "epsilon_upper": 0.5109408981652809,
+      "gap_bound_2alpha": 0.2,
+      "gap_within_2alpha": true,
+      "ordered": true,
+      "runtime_seconds": 0.03145679099543486,
+      "sigma": 2.0,
+      "t": 16
+    },
+    {
+      "alpha": 0.2,
+      "beta": 1e-08,
+      "delta": 1e-05,
+      "epsilon_gap": 0.1393158236127995,
+      "epsilon_lower": 0.16294423444104103,
+      "epsilon_upper": 0.30226005805384054,
+      "gap_bound_2alpha": 0.4,
+      "gap_within_2alpha": true,
+      "ordered": true,
+      "runtime_seconds": 0.03676733298925683,
+      "sigma": 2.0,
+      "t": 64
+    },
+    {
+      "alpha": 0.1,
+      "beta": 1e-08,
+      "delta": 1e-05,
+      "epsilon_gap": 0.06810658804718536,
+      "epsilon_lower": 0.19060446944721768,
+      "epsilon_upper": 0.25871105749440304,
+      "gap_bound_2alpha": 0.2,
+      "gap_within_2alpha": true,
+      "ordered": true,
+      "runtime_seconds": 0.04021925000415649,
+      "sigma": 2.0,
+      "t": 64
+    },
+    {
+      "alpha": 0.2,
+      "beta": 1e-08,
+      "delta": 1e-05,
+      "epsilon_gap": 0.13315401789804088,
+      "epsilon_lower": 0.05097895390374967,
+      "epsilon_upper": 0.18413297180179056,
+      "gap_bound_2alpha": 0.4,
+      "gap_within_2alpha": true,
+      "ordered": true,
+      "runtime_seconds": 0.044247124998946674,
+      "sigma": 2.0,
+      "t": 256
+    },
+    {
+      "alpha": 0.1,
+      "beta": 1e-08,
+      "delta": 1e-05,
+      "epsilon_gap": 0.0684727909013845,
+      "epsilon_lower": 0.07487939621968248,
+      "epsilon_upper": 0.14335218712106698,
+      "gap_bound_2alpha": 0.2,
+      "gap_within_2alpha": true,
+      "ordered": true,
+      "runtime_seconds": 0.07194916698790621,
+      "sigma": 2.0,
+      "t": 256
+    }
+  ],
+  "scaling": {
+    "alpha_exponent_acceptance": [
+      1.5,
+      2.5
+    ],
+    "alpha_exponent_expected": 2.0,
+    "alpha_work_exponent_against_inverse_alpha": 1.9844019987280743,
+    "normalized_ratio_acceptance_max": 8.0,
+    "normalized_work_max": 13.95514530126106,
+    "normalized_work_min": 8.467841594182476,
+    "normalized_work_ratio": 1.6480168111373787,
+    "t_exponent_acceptance": [
+      1.5,
+      4.5
+    ],
+    "t_exponent_expected": 3.0,
+    "t_work_exponent_against_log_t": 2.4873381039377493
+  }
+}

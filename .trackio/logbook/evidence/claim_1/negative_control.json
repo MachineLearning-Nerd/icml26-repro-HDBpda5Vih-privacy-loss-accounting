@@ -1,0 +1,212 @@
+[
+  {
+    "direction": "remove",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 1
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 1
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 2
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 2
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 3
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 3
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 4
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 4
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 5
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_asymmetric",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 5
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 1
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 1
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 2
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 2
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 3
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 3
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 4
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 4
+  },
+  {
+    "direction": "remove",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 5
+  },
+  {
+    "direction": "add",
+    "mechanism": "binary_strong",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 5
+  },
+  {
+    "direction": "remove",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 1
+  },
+  {
+    "direction": "add",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 1
+  },
+  {
+    "direction": "remove",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 2
+  },
+  {
+    "direction": "add",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 2
+  },
+  {
+    "direction": "remove",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 3
+  },
+  {
+    "direction": "add",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 3
+  },
+  {
+    "direction": "remove",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 4
+  },
+  {
+    "direction": "add",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 4
+  },
+  {
+    "direction": "remove",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 5
+  },
+  {
+    "direction": "add",
+    "mechanism": "ternary",
+    "mutation": "replace denominator t by t+1",
+    "rejected": true,
+    "t": 5
+  }
+]

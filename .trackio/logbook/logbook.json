@@ -2,13 +2,13 @@
   "schema_version": 1,
   "title": "Repro - Efficient privacy loss accounting for subsampling and random allocation",
   "emoji": "🎯",
-  "space_id": null,
+  "space_id": "DineshAI/HDBpda5Vih",
   "paper": null,
   "tags": [
     "icml2026-repro",
     "paper-HDBpda5Vih"
   ],
-  "updated_at": "2026-07-22T01:59:33+00:00",
+  "updated_at": "2026-07-25T00:00:00+00:00",
   "root": {
     "slug": "index",
     "title": "Repro - Efficient privacy loss accounting for subsampling and random allocation",
@@ -43,9 +43,58 @@
         "title": "Conclusion",
         "file": "pages/conclusion/page.md",
         "children": []
+      },
+      {
+        "slug": "claim-by-claim-reproduction",
+        "title": "Claim-by-claim reproduction",
+        "file": "pages/claim-by-claim-reproduction/page.md",
+        "children": [
+          {
+            "slug": "claim-1",
+            "title": "Claim 1 — exact PLD reduction",
+            "file": "pages/claim-1/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-2",
+            "title": "Claim 2 — geometric algorithm",
+            "file": "pages/claim-2/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-3",
+            "title": "Claim 3 — Poisson transformations",
+            "file": "pages/claim-3/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-4",
+            "title": "Claim 4 — numerical comparisons",
+            "file": "pages/claim-4/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-5",
+            "title": "Claim 5 — Bernoulli experiment",
+            "file": "pages/claim-5/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-6",
+            "title": "Claim 6 — PREAMBLE / DP-SGD",
+            "file": "pages/claim-6/page.md",
+            "children": []
+          }
+        ]
+      },
+      {
+        "slug": "release-provenance",
+        "title": "Release provenance",
+        "file": "pages/release-provenance/page.md",
+        "children": []
       }
     ]
   },
-  "agent_view_tokens": 1537,
-  "revision": "1784685573847603536"
+  "agent_view_tokens": 4300,
+  "revision": "20260725-claim-contract-release"
 }

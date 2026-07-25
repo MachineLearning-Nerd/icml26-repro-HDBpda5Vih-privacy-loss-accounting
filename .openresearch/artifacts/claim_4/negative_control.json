@@ -1,0 +1,5 @@
+{
+  "mutation": "multiply every Chua lower-bound delta by 10",
+  "reason": "the mutated lower bound exceeds a rigorous PLD upper bound on at least one resolved profile point",
+  "rejected": true
+}

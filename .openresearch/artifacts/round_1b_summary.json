@@ -1,0 +1,10 @@
+{
+  "claim_2": "VERIFIED",
+  "fast_accuracy_cases": 17,
+  "fast_ok": true,
+  "fixed_command": "uv run --frozen python repro/src/verify_pld.py",
+  "released_gaussian_cases": 6,
+  "released_gaussian_ok": true,
+  "runtime_seconds": 2.287200666993158,
+  "scaling_ok": true
+}

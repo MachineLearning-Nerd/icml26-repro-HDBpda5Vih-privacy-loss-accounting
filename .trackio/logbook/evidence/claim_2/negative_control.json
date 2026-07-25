@@ -1,0 +1,87 @@
+[
+  {
+    "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+    "rejected": true,
+    "validity_max_violation": 0.27735
+  },
+  {
+    "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+    "rejected": true,
+    "validity_max_violation": 0.21437749759999997
+  },
+  {
+    "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+    "rejected": true,
+    "validity_max_violation": 0.16479758631955882
+  },
+  {
+    "mutation": "use IS_DOMINATED rounding but label it DOMINATES",
+    "rejected": true,
+    "validity_max_violation": 0.14057292325574572
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  },
+  {
+    "mutation": "not run: operation-count-only scaling case",
+    "rejected": null,
+    "validity_max_violation": null
+  }
+]
