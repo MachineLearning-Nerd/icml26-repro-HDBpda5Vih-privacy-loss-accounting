@@ -130,6 +130,18 @@ def _claim_page(gate: dict[str, Any]) -> str:
         6: ("evidence/claim_6/full_grid.csv", "full PREAMBLE grid"),
     }
     evidence.append(_link(*extra_raw[claim_id]))
+    evidence.extend(
+        [
+            _link(
+                "evidence/release_v3/cumulative_run.log",
+                "definitive current-commit run log",
+            ),
+            _link(
+                "evidence/release_v3/formal_run_metadata.json",
+                "definitive run metadata",
+            ),
+        ]
+    )
     direct_results = {
         1: (
             "The executed checker enumerates three asymmetric finite-support "
@@ -192,7 +204,9 @@ def _claim_page(gate: dict[str, Any]) -> str:
 {checks}
 
 The fixed command regenerated the raw results and exits nonzero if any gate
-fails. Evidence: {" · ".join(evidence)}.
+fails. Raw artifact environment files retain the originating accepted-run
+commit; the linked definitive log records the cumulative re-execution from the
+current immutable release commit. Evidence: {" · ".join(evidence)}.
 """
 
 
@@ -267,7 +281,8 @@ Run: `uv run --frozen python repro/src/verify_pld.py`
 
 {_link("repro/src/verify_pld.py", "cumulative entry point")} ·
 {_link("evidence/judge_release/results.json", "all machine gates")} ·
-{_link("evidence/release_v2/cumulative_run.log", "formal run log")}
+{_link("evidence/release_v3/cumulative_run.log", "definitive run log")} ·
+{_link("evidence/release_v3/formal_run_metadata.json", "definitive run metadata")}
 """,
     )
 
@@ -354,9 +369,9 @@ def build(base: Path, output: Path, release_dir: Path, run_log: Path) -> None:
         output / "evidence",
         dirs_exist_ok=True,
     )
-    (output / "evidence" / "release_v2").mkdir(parents=True, exist_ok=True)
+    (output / "evidence" / "release_v3").mkdir(parents=True, exist_ok=True)
     shutil.copy2(
-        run_log, output / "evidence" / "release_v2" / "cumulative_run.log"
+        run_log, output / "evidence" / "release_v3" / "cumulative_run.log"
     )
     shutil.copytree(
         ROOT / "repro",
@@ -370,7 +385,7 @@ def build(base: Path, output: Path, release_dir: Path, run_log: Path) -> None:
         output / ".openresearch" / "artifacts",
         dirs_exist_ok=True,
     )
-    (output / ".openresearch" / "artifacts" / "release_v2").mkdir(
+    (output / ".openresearch" / "artifacts" / "release_v3").mkdir(
         parents=True, exist_ok=True
     )
     shutil.copy2(
@@ -378,7 +393,7 @@ def build(base: Path, output: Path, release_dir: Path, run_log: Path) -> None:
         output
         / ".openresearch"
         / "artifacts"
-        / "release_v2"
+        / "release_v3"
         / "cumulative_run.log",
     )
 
