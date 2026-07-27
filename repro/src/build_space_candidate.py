@@ -31,7 +31,8 @@ TEXT_SUFFIXES = {
     ".txt",
 }
 SECRET_PATTERNS = (
-    re.compile(r"\b(?:hf|sk)_[A-Za-z0-9_-]{20,}\b"),
+    re.compile(r"\bhf_[A-Za-z0-9]{30,}\b"),
+    re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b"),
     re.compile(r"\b(?:HF_TOKEN|GITHUB_TOKEN|GH_TOKEN)\s*=\s*\S+"),
 )
 
@@ -112,11 +113,11 @@ def _claim_page(gate: dict[str, Any]) -> str:
             "raw machine output",
         ),
         _link(
-            f"code/repro/src/{code_by_claim[claim_id]}",
+            f"repro/src/{code_by_claim[claim_id]}",
             "executed verifier source",
         ),
         _link(
-            "code/repro/src/verify_judge_contract.py",
+            "repro/src/verify_judge_contract.py",
             "exact-claim release gate",
         ),
     ]
@@ -144,6 +145,45 @@ failed. Evidence: {" · ".join(evidence)}.
 """
 
 
+def _archive_index(candidate: Path, old_root: dict[str, Any]) -> None:
+    page_links: list[str] = []
+
+    def walk(node: dict[str, Any]) -> None:
+        file_path = node.get("file")
+        if file_path:
+            page_links.append(
+                f"- {_link(file_path, node.get('title', file_path))}"
+            )
+        for child in node.get("children", []):
+            walk(child)
+
+    walk(old_root)
+    evidence_links = [
+        f"- {_link(path.relative_to(candidate).as_posix(), path.name)}"
+        for path in sorted((candidate / "evidence").rglob("*"))
+        if path.is_file()
+    ]
+    _write(
+        candidate / "pages" / "archived-judged-baseline" / "files.md",
+        """# Preserved judged-revision file index
+
+These files are immutable historical evidence from the previously judged
+revision. They remain reachable for provenance but are not nodes in the active
+claim-verification tree.
+
+## Historical logbook pages
+
+"""
+        + "\n".join(page_links)
+        + """
+
+## Historical and cumulative evidence files
+
+"""
+        + "\n".join(evidence_links),
+    )
+
+
 def _build_pages(
     candidate: Path, results: dict[str, Any], old_root: dict[str, Any]
 ) -> list[dict[str, Any]]:
@@ -158,9 +198,9 @@ fixed CPU command. Claims 1–4 are **VERIFIED**. Claims 5–6 are **FALSIFIED a
 literally registered** because their figure locators are wrong, while their
 substantive Bernoulli and PREAMBLE results are independently **VERIFIED**.
 
-Unlike the archived 0/12 verification page, this release includes the actual
-executed verifier source, raw outputs, independent checkers, negative controls,
-locked environment, source hashes, and cumulative log.
+This release includes the actual executed verifier source, raw outputs,
+independent checkers, negative controls, locked environment, source hashes, and
+cumulative log.
 
 | Claim | Direct result | Exact verdict |
 | --- | --- | --- |
@@ -174,7 +214,7 @@ locked environment, source hashes, and cumulative log.
 
 Run: `uv run --frozen python repro/src/verify_pld.py`
 
-{_link("code/repro/src/verify_pld.py", "cumulative entry point")} ·
+{_link("repro/src/verify_pld.py", "cumulative entry point")} ·
 {_link("evidence/judge_release/results.json", "all machine gates")} ·
 {_link("evidence/release_v2/cumulative_run.log", "formal run log")}
 """,
@@ -211,10 +251,10 @@ It executes the five direct scientific suites and then
 exact registered claim strings. Any failed evidence gate makes the command
 exit nonzero.
 
-- {_link("code/repro/src/verify_pld.py", "executed entry point")}
-- {_link("code/repro/src/verify_judge_contract.py", "registered-claim gate")}
-- {_link("code/pyproject.toml", "environment inputs")}
-- {_link("code/uv.lock", "complete lockfile")}
+- {_link("repro/src/verify_pld.py", "executed entry point")}
+- {_link("repro/src/verify_judge_contract.py", "registered-claim gate")}
+- {_link("pyproject.toml", "environment inputs")}
+- {_link("uv.lock", "complete lockfile")}
 - {_link("evidence/release_v2/cumulative_run.log", "complete formal log")}
 - {_link("evidence/judge_release/results.json", "machine-readable result")}
 """,
@@ -223,22 +263,25 @@ exit nonzero.
     archive = candidate / "pages" / "archived-judged-baseline" / "page.md"
     _write(
         archive,
-        """# Archived judged baseline
+        f"""# Archived judged baseline
 
 These pages are preserved verbatim from the earlier judged logbook for
 provenance. Its embedded `verify_pld.py` contains generic proxy checks and is
-**not** the verifier used by the current release. The live judge scored that
-archived path 0/12.
+**not** the verifier used by the current release. That proxy path received five
+toy-level points (5/12).
 
 The replacement verifier and evidence are the top-level exact claim pages and
-the “Executed cumulative verification” page.
+the “Executed cumulative verification” page. All historical pages and evidence
+remain reachable through the
+{_link("pages/archived-judged-baseline/files.md", "immutable file index")}.
 """,
     )
+    _archive_index(candidate, old_root)
 
     conclusion = candidate / "pages" / "conclusion-v2" / "page.md"
     _write(
         conclusion,
-        """# Conclusion
+        f"""# Conclusion
 
 All six registered-claim evidence gates pass with direct, reproducible CPU
 evidence. Claims 1–4 are verified. Claims 5–6 receive rigorous literal
@@ -246,12 +289,15 @@ falsifications for their incorrect figure locators, with the nearby
 substantive scientific results separately verified at the stated full-scale
 parameters.
 
+For provenance, the previous judged files remain available through the
+{_link("pages/archived-judged-baseline/files.md", "immutable historical file index")},
+but they are not part of the active verification tree.
+
 This is a local scientific assessment. No public score is claimed until the
 live judge evaluates this exact Space revision.
 """,
     )
 
-    archived_children = old_root.get("children", [])
     return [
         {
             "slug": "executive-summary-v2",
@@ -265,12 +311,6 @@ live judge evaluates this exact Space revision.
             "title": "Executed cumulative verification",
             "file": "pages/verification-run-v2/page.md",
             "children": [],
-        },
-        {
-            "slug": "archived-judged-baseline",
-            "title": "Archived judged baseline (0/12)",
-            "file": "pages/archived-judged-baseline/page.md",
-            "children": archived_children,
         },
         {
             "slug": "conclusion-v2",
@@ -298,14 +338,29 @@ def build(base: Path, output: Path, release_dir: Path, run_log: Path) -> None:
     shutil.copy2(
         run_log, output / "evidence" / "release_v2" / "cumulative_run.log"
     )
-    code_root = output / "code"
     shutil.copytree(
         ROOT / "repro",
-        code_root / "repro",
+        output / "repro",
         ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
     )
-    shutil.copy2(ROOT / "pyproject.toml", code_root / "pyproject.toml")
-    shutil.copy2(ROOT / "uv.lock", code_root / "uv.lock")
+    shutil.copy2(ROOT / "pyproject.toml", output / "pyproject.toml")
+    shutil.copy2(ROOT / "uv.lock", output / "uv.lock")
+    shutil.copytree(
+        ROOT / ".openresearch" / "artifacts",
+        output / ".openresearch" / "artifacts",
+        dirs_exist_ok=True,
+    )
+    (output / ".openresearch" / "artifacts" / "release_v2").mkdir(
+        parents=True, exist_ok=True
+    )
+    shutil.copy2(
+        run_log,
+        output
+        / ".openresearch"
+        / "artifacts"
+        / "release_v2"
+        / "cumulative_run.log",
+    )
 
     results = json.loads(
         (
