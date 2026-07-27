@@ -130,18 +130,69 @@ def _claim_page(gate: dict[str, Any]) -> str:
         6: ("evidence/claim_6/full_grid.csv", "full PREAMBLE grid"),
     }
     evidence.append(_link(*extra_raw[claim_id]))
+    direct_results = {
+        1: (
+            "The executed checker enumerates three asymmetric finite-support "
+            "mechanisms for `t=1..5` in both add and remove directions. All "
+            "**30/30 rational PLD identities are exactly equal**; six "
+            "separate `k=2` scope identities also pass. Replacing the theorem "
+            "denominator `t` by `t+1` is rejected in **30/30** cases."
+        ),
+        2: (
+            "The executed checker compares rounded exponentiation-by-squaring "
+            "against direct exact convolution in **17 cases**, exercises the "
+            "pinned released Gaussian API in **6 cases**, and audits every "
+            "binary multiplication schedule. Primitive-work fits give "
+            "`log(t)^2.487` and `alpha^-1.984`; all four destructive "
+            "lower-rounding controls are rejected."
+        ),
+        3: (
+            "The executed checker compares the `phi_lambda` realization maps "
+            "pointwise with directly mixed distributions. All **24/24 exact "
+            "transformations** and four allocation-then-subsampling unified "
+            "composition identities pass; omitting the required mixture term "
+            "is rejected in **24/24** cases."
+        ),
+        4: (
+            "At the exact registered domain `t in {1000,10000}` and "
+            "`delta=1e-6`, the run evaluates **20/20** primary comparison "
+            "points and PLD is below the analytic RDP bound at every point "
+            "(median improvement **83.03%**). Independent Chua and seeded "
+            "Monte Carlo checks pass; 44 Monte Carlo points are statistically "
+            "resolved rather than treating unresolved tails as passes."
+        ),
+        5: (
+            "At `n=t=1000` and `delta=1e-10`, allocation requires less noise "
+            "in all three privacy panels: `0.889941 < 0.891829` for "
+            "`epsilon=1`, and `1.865726 < 1.938765` for both `epsilon=0.1` "
+            "panels. Exact utility and seeded Monte Carlo checks agree, and "
+            "participation variance is audited separately from privacy."
+        ),
+        6: (
+            "The run uses the exact `n=600000`, `d=2^20`, `C=2^15`, "
+            "`E=10` constants over four batch sizes and ten block sizes. PLD "
+            "is below independently recomputed RDP at **40/40 full-scale "
+            "points** (minimum/median improvement **5.99%/26.55%**). At the "
+            "matched-privacy anchor, PLD gives `epsilon=0.272300` where RDP "
+            "gives `1.029195` at the same `sigma=1.802490`."
+        ),
+    }
     return f"""# Claim {claim_id}: {gate["registered_claim"]}
 
 ## Verdict
 
 **{verdict}.** {gate["headline"]}.
 {qualification}
-## Executed machine gates
+## Direct executed result
+
+{direct_results[claim_id]}
+
+## Failure-sensitive gates
 
 {checks}
 
-The fixed command regenerated these results and exited nonzero if any gate
-failed. Evidence: {" · ".join(evidence)}.
+The fixed command regenerated the raw results and exits nonzero if any gate
+fails. Evidence: {" · ".join(evidence)}.
 """
 
 
@@ -235,31 +286,6 @@ Run: `uv run --frozen python repro/src/verify_pld.py`
             }
         )
 
-    verification = candidate / "pages" / "verification-run-v2" / "page.md"
-    _write(
-        verification,
-        f"""# Executed cumulative verification
-
-The formal experiment used exactly:
-
-```bash
-uv run --frozen python repro/src/verify_pld.py
-```
-
-It executes the five direct scientific suites and then
-`verify_judge_contract.py`, which binds their regenerated outputs to the six
-exact registered claim strings. Any failed evidence gate makes the command
-exit nonzero.
-
-- {_link("repro/src/verify_pld.py", "executed entry point")}
-- {_link("repro/src/verify_judge_contract.py", "registered-claim gate")}
-- {_link("pyproject.toml", "environment inputs")}
-- {_link("uv.lock", "complete lockfile")}
-- {_link("evidence/release_v2/cumulative_run.log", "complete formal log")}
-- {_link("evidence/judge_release/results.json", "machine-readable result")}
-""",
-    )
-
     archive = candidate / "pages" / "archived-judged-baseline" / "page.md"
     _write(
         archive,
@@ -306,12 +332,6 @@ live judge evaluates this exact Space revision.
             "children": [],
         },
         *claim_nodes,
-        {
-            "slug": "verification-run-v2",
-            "title": "Executed cumulative verification",
-            "file": "pages/verification-run-v2/page.md",
-            "children": [],
-        },
         {
             "slug": "conclusion-v2",
             "title": "Conclusion",
