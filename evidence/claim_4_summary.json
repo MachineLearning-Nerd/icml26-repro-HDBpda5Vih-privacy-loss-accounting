@@ -1,0 +1,29 @@
+{
+  "claim_4": "VERIFIED",
+  "figure_1_intervals_ok": true,
+  "figure_1_points": 20,
+  "figure_1_rdp_ok": true,
+  "figure_2_chua_closeness_ok": true,
+  "figure_2_intervals_and_lower_ordering_ok": true,
+  "figure_2_monte_carlo_ok": true,
+  "figure_2_points": 80,
+  "fixed_command": "uv run --frozen python repro/src/verify_pld.py",
+  "independent_checker_ok": true,
+  "max_pld_interval": 0.006905375334241036,
+  "median_chua_log10_gap": 0.004841915438619004,
+  "median_mc_log10_gap": 0.013590364379899578,
+  "median_rdp_improvement": 0.8303206551064275,
+  "negative_control_ok": true,
+  "p90_chua_log10_gap": 0.030314569358640932,
+  "p90_mc_log10_gap": 0.030884718116388002,
+  "passed": true,
+  "resolved_chua_points": 80,
+  "runtime_seconds": 588.8543558329984,
+  "stable_monte_carlo_points": 44,
+  "stable_points_per_profile": {
+    "Criteo Search, batch 1024": 16,
+    "Criteo Search, batch 8192": 9,
+    "Criteo pCTR, batch 1024": 13,
+    "Criteo pCTR, batch 8192": 6
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "agent_view_tokens": 6000,
+  "emoji": "\ud83c\udfaf",
+  "paper": {
+    "arxiv_id": "2602.17284"
+  },
+  "revision": "20260725-claim-contract-release",
+  "root": {
+    "children": [
+      {
+        "children": [],
+        "file": "pages/executive-summary-v2/page.md",
+        "slug": "executive-summary-v2",
+        "title": "Executive summary \u2014 exact registered claims"
+      },
+      {
+        "children": [],
+        "file": "pages/registered-claim-1/page.md",
+        "slug": "registered-claim-1",
+        "title": "Claim 1: Theorem 4.4 gives a closed-form reduction of the privacy loss distribution (PLD) of k-out-of-t random allocation to t-wise convolutions of exponentiated PLD terms (Section 4, Theorem 4.4)."
+      },
+      {
+        "children": [],
+        "file": "pages/registered-claim-2/page.md",
+        "slug": "registered-claim-2",
+        "title": "Claim 2: The proposed algorithm computes an (\u03b1,\u03b2)-accurate approximation of the random allocation PLD in time O(log\u00b3(t)\u00b7log(t/\u03b2)/\u03b1\u00b2), using exponentiation-by-squaring with geometric-grid rounding (Section 4, Theorem 4.6)."
+      },
+      {
+        "children": [],
+        "file": "pages/registered-claim-3/page.md",
+        "slug": "registered-claim-3",
+        "title": "Claim 3: Theorem 3.3 introduces transformation rules \u03c6_\u03bb that apply Poisson subsampling directly to PLD realizations, allowing subsampling and random allocation to be composed within one unified PLD framework (Section 3, Theorem 3.3, Definition 3.1)."
+      },
+      {
+        "children": [],
+        "file": "pages/registered-claim-4/page.md",
+        "slug": "registered-claim-4",
+        "title": "Claim 4: Numerical experiments show the new random allocation privacy bounds are nearly identical to the Monte Carlo lower bounds of Chua et al. (2024a) and substantially tighter than RDP-based analytic bounds, for t \u2208 {1000, 10000} and \u03b4 = 10\u207b\u2076 (Section 5, Figures 1-2)."
+      },
+      {
+        "children": [],
+        "file": "pages/registered-claim-5/page.md",
+        "slug": "registered-claim-5",
+        "title": "Claim 5: A toy Bernoulli mean-estimation experiment (n=10\u00b3, \u03b4=10\u207b\u00b9\u2070) shows random allocation requires strictly lower noise than Poisson subsampling for the same privacy level, demonstrating a genuine privacy (not just variance) advantage (Section 5, Figure 4)."
+      },
+      {
+        "children": [],
+        "file": "pages/registered-claim-6/page.md",
+        "slug": "registered-claim-6",
+        "title": "Claim 6: Applied to a DP-SGD scenario with block-sparse coordinate sampling (n=6\u00d710\u2075, d=2\u00b2\u2070, C=2\u00b9\u2075, E=10 epochs), the PLD accounting method improves privacy bounds over RDP composition even under heavy composition (Section 5, Figure 5)."
+      },
+      {
+        "children": [],
+        "file": "pages/conclusion-v2/page.md",
+        "slug": "conclusion-v2",
+        "title": "Conclusion"
+      }
+    ],
+    "file": "pages/index-v2.md",
+    "slug": "index",
+    "title": "Reproduction: Efficient privacy loss accounting for subsampling and random allocation"
+  },
+  "schema_version": 1,
+  "space_id": "DineshAI/HDBpda5Vih",
+  "tags": [
+    "icml2026-repro",
+    "paper-HDBpda5Vih"
+  ],
+  "title": "Repro - Efficient privacy loss accounting for subsampling and random allocation",
+  "updated_at": "2026-07-25T00:00:00+00:00"
+}

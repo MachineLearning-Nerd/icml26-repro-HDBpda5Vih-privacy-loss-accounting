@@ -1,0 +1,27 @@
+[
+  {
+    "bytes": 842,
+    "path": ".openresearch/artifacts/judge_release/EVAL.md",
+    "sha256": "a714ad90f9f81f2ba511518b58440977d4aff17ed0595d0663a24891d498c735"
+  },
+  {
+    "bytes": 1540,
+    "path": ".openresearch/artifacts/judge_release/claims.json",
+    "sha256": "d5f1902595dd4c6bf2ee0f471260d88fc747a51b103594fdf9d2b74a7d96c67a"
+  },
+  {
+    "bytes": 475,
+    "path": ".openresearch/artifacts/judge_release/exact_command_environment.json",
+    "sha256": "522f717fbe85e96592c28ddc97c8f2f4cebcd0055fabad47f8a748beeaacf58a"
+  },
+  {
+    "bytes": 888,
+    "path": ".openresearch/artifacts/judge_release/manifest.json",
+    "sha256": "95453db8a70958d6a514deb4425a7f934ca5e2de72c1535cb22128051e593552"
+  },
+  {
+    "bytes": 5232,
+    "path": ".openresearch/artifacts/judge_release/results.json",
+    "sha256": "8f91ace1461203cf8fc383a6d88a0d273dfb2a991173bf23bf4c4e8e6da6b786"
+  }
+]

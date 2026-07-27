@@ -47,7 +47,8 @@ def _(mo, np, plt):
 
                 **Headline evidence:** every claim has a direct, failure-sensitive
                 contract, an independent check, and a negative control. These are
-                local verdicts; the public judge has not evaluated this revision.
+                local verdicts; the public judge has not evaluated revision
+                `bd20a58` yet.
                 """
             ),
             _fig,
@@ -96,14 +97,16 @@ def _():
             "44 statistically resolved Monte Carlo points.",
         ),
         "Claim 5 — Bernoulli utility": (
-            "VERIFIED",
+            "FALSIFIED as registered; substantive result VERIFIED",
             "n=1,000 and δ=10⁻¹⁰; allocation used 0.21–3.77% less noise "
-            "across all three privacy panels.",
+            "across all three privacy panels. The registered Figure 4 locator "
+            "is false; the experiment is Figure 5.",
         ),
         "Claim 6 — PREAMBLE/DP-SGD": (
-            "VERIFIED",
+            "FALSIFIED as registered; substantive result VERIFIED",
             "40/40 full-scale points favored PLD; minimum/median epsilon "
-            "improvement 5.99%/26.55%; matched-privacy anchor passed.",
+            "improvement 5.99%/26.55%; matched-privacy anchor passed. The "
+            "registered Figure 5 locator is false; PREAMBLE is Figure 3.",
         ),
     }
     return (claim_details,)
@@ -189,7 +192,7 @@ def _():
 def _(claim6_grid, mo):
     batch = mo.ui.dropdown(
         options={f"{value:,}": value for value in claim6_grid},
-        value=512,
+        value="512",
         label="Claim 6 batch size",
     )
     batch

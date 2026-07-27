@@ -1,0 +1,57 @@
+[
+  {
+    "bytes": 168,
+    "path": ".openresearch/artifacts/claim_5/EVAL.md",
+    "sha256": "e0afd7f3034636eaef57af98088f7c7c62a7d4dac5b67a144fac2a2d50e26f0f"
+  },
+  {
+    "bytes": 1060,
+    "path": ".openresearch/artifacts/claim_5/claim_contract.json",
+    "sha256": "10cbe1e898603447a8cb3b4d377a696882505dd55e19227ebbb5f5135b75c256"
+  },
+  {
+    "bytes": 629,
+    "path": ".openresearch/artifacts/claim_5/exact_command_environment.json",
+    "sha256": "19e6081a83f0078f02a43fa07b65456489792465681abbc8c9ba989aa82cdb3d"
+  },
+  {
+    "bytes": 9460,
+    "path": ".openresearch/artifacts/claim_5/independent_checker.json",
+    "sha256": "8043c9590c9c65961983cde1648508f405cb0fbdeeb25d000d14a58906d376d6"
+  },
+  {
+    "bytes": 617,
+    "path": ".openresearch/artifacts/claim_5/limitations.md",
+    "sha256": "d352561f98b9feea038ca3473e8f9e992fd83eb74c587765c2a9ef9ff844f272"
+  },
+  {
+    "bytes": 923,
+    "path": ".openresearch/artifacts/claim_5/method.md",
+    "sha256": "ae929a5db7584efedc48c38ceb8b466b4d2ab605793a199cc69ca8601dde1396"
+  },
+  {
+    "bytes": 163,
+    "path": ".openresearch/artifacts/claim_5/negative_control.json",
+    "sha256": "c61e30644e064d08d901ca29d8c1ada3b56f668b6a12b97804313ea39e912dd4"
+  },
+  {
+    "bytes": 3310,
+    "path": ".openresearch/artifacts/claim_5/privacy_noise.csv",
+    "sha256": "b54b3ade4ebd54b418230c8af4cfd04e32a3b14b5469ae5f6859dac82d5ea449"
+  },
+  {
+    "bytes": 14598,
+    "path": ".openresearch/artifacts/claim_5/raw_results.json",
+    "sha256": "298869f4a5abdc5680502ae62e0029bb84e7ab2e77a50d85c4a8dd12a065a185"
+  },
+  {
+    "bytes": 569,
+    "path": ".openresearch/artifacts/claim_5/source_audit.md",
+    "sha256": "cbeebe4cc5cd44a867832404f754aa8d321ee1092ca3d25dd997c451f297417c"
+  },
+  {
+    "bytes": 1897,
+    "path": ".openresearch/artifacts/claim_5/utility_mse.csv",
+    "sha256": "54c1d221659db86decb56ace197c9d61d95d81909e8af7e88607071b1e9e8e3d"
+  }
+]

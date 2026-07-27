@@ -1,0 +1,111 @@
+{
+  "all_passed": true,
+  "exact_registered_claim_count": 6,
+  "fixed_command": "uv run --frozen python repro/src/verify_pld.py",
+  "gates": [
+    {
+      "checks": {
+        "all_identities_pass": true,
+        "all_mutations_rejected": true,
+        "exact_identities": true,
+        "suite_verified": true
+      },
+      "claim_id": 1,
+      "headline": "30 exact rational identities; 30/30 mutations rejected",
+      "passed": true,
+      "registered_claim": "Theorem 4.4 gives a closed-form reduction of the privacy loss distribution (PLD) of k-out-of-t random allocation to t-wise convolutions of exponentiated PLD terms (Section 4, Theorem 4.4).",
+      "verdict": "VERIFIED"
+    },
+    {
+      "checks": {
+        "accuracy_and_scaling": true,
+        "fast_exact_cases": true,
+        "released_gaussian_cases": true,
+        "suite_verified": true
+      },
+      "claim_id": 2,
+      "headline": "17 fast/exact cases, 6 released API cases, \u03b1\u207b\u00b2 scaling",
+      "passed": true,
+      "registered_claim": "The proposed algorithm computes an (\u03b1,\u03b2)-accurate approximation of the random allocation PLD in time O(log\u00b3(t)\u00b7log(t/\u03b2)/\u03b1\u00b2), using exponentiation-by-squaring with geometric-grid rounding (Section 4, Theorem 4.6).",
+      "verdict": "VERIFIED"
+    },
+    {
+      "checks": {
+        "all_mutations_rejected": true,
+        "all_transformations_pass": true,
+        "exact_transformations": true,
+        "suite_verified": true
+      },
+      "claim_id": 3,
+      "headline": "24 exact \u03c6_\u03bb identities; 24/24 mutations rejected",
+      "passed": true,
+      "registered_claim": "Theorem 3.3 introduces transformation rules \u03c6_\u03bb that apply Poisson subsampling directly to PLD realizations, allowing subsampling and random allocation to be composed within one unified PLD framework (Section 3, Theorem 3.3, Definition 3.1).",
+      "verdict": "VERIFIED"
+    },
+    {
+      "checks": {
+        "chua_lower_gate": true,
+        "exact_registered_domain": true,
+        "independent_checker": true,
+        "monte_carlo_gate": true,
+        "negative_control": true,
+        "pointwise_pld_below_rdp": true,
+        "suite_verified": true
+      },
+      "claim_id": 4,
+      "headline": "t={1000,10000}, \u03b4=10\u207b\u2076; PLD<RDP at 20/20 points; independent Chua and Monte Carlo checks",
+      "passed": true,
+      "registered_claim": "Numerical experiments show the new random allocation privacy bounds are nearly identical to the Monte Carlo lower bounds of Chua et al. (2024a) and substantially tighter than RDP-based analytic bounds, for t \u2208 {1000, 10000} and \u03b4 = 10\u207b\u2076 (Section 5, Figures 1-2).",
+      "verdict": "VERIFIED"
+    },
+    {
+      "checks": {
+        "exact_registered_parameters": true,
+        "monte_carlo_gate": true,
+        "negative_control": true,
+        "privacy_gate": true,
+        "strict_noise_advantage": true,
+        "suite_verified": true,
+        "variance_separated": true
+      },
+      "claim_id": 5,
+      "headline": "n=1000, \u03b4=10\u207b\u00b9\u2070; allocation requires less noise in 3/3 panels; locator is literally false",
+      "literal_falsification": "The Bernoulli experiment is Figure 5 in the paper, not the registered Figure 4.",
+      "passed": true,
+      "registered_claim": "A toy Bernoulli mean-estimation experiment (n=10\u00b3, \u03b4=10\u207b\u00b9\u2070) shows random allocation requires strictly lower noise than Poisson subsampling for the same privacy level, demonstrating a genuine privacy (not just variance) advantage (Section 5, Figure 4).",
+      "substantive_verdict": "VERIFIED",
+      "verdict": "FALSIFIED"
+    },
+    {
+      "checks": {
+        "exact_registered_constants": true,
+        "full_domain": true,
+        "independent_checker": true,
+        "negative_control": true,
+        "parameter_identities": true,
+        "pointwise_pld_below_rdp": true,
+        "successful_anchor": true,
+        "suite_verified": true
+      },
+      "claim_id": 6,
+      "headline": "exact n,d,C,E constants; PLD<RDP at 40/40 points; locator is literally false",
+      "literal_falsification": "The PREAMBLE comparison is Figure 3 in the paper, not the registered Figure 5.",
+      "passed": true,
+      "registered_claim": "Applied to a DP-SGD scenario with block-sparse coordinate sampling (n=6\u00d710\u2075, d=2\u00b2\u2070, C=2\u00b9\u2075, E=10 epochs), the PLD accounting method improves privacy bounds over RDP composition even under heavy composition (Section 5, Figure 5).",
+      "substantive_verdict": "VERIFIED",
+      "verdict": "FALSIFIED"
+    }
+  ],
+  "paper": {
+    "arxiv_id": "2602.17284",
+    "openreview_id": "HDBpda5Vih",
+    "title": "Efficient privacy loss accounting for subsampling and random allocation"
+  },
+  "runtime_seconds": 0.004561415989883244,
+  "source_pins": {
+    "author_implementation_commit": "11ed6d14e846de658465fb91309f574ab933cdc9",
+    "paper_html_sha256": "6e70fa5ab5a0a48536a8bb18be12cb5b159279cdddc9ab97059a2e36c6adf103",
+    "paper_pdf_sha256": "a7f8934f84821aaaddfb53b79d4addf09efacf4a34726137726b508f3b957f8b",
+    "paper_source_sha256": "e1b59bfc3f2fcfe503140d23e357dc4f907aa536f4a3d77f1e498305821b8da6"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "active_child_count": 8,
+  "active_shape_matches_12_of_12_reference": true,
+  "all_active_links_exist": true,
+  "all_active_pages_exist": true,
+  "all_six_gates_passed": true,
+  "allowlist_count": 168,
+  "allowlist_utf8_only": true,
+  "base_revision": "2a3cacbe5ed8be13463a9187d31351e0ab922639",
+  "candidate_file_count": 271,
+  "changed_old_files": [
+    "README.md",
+    "logbook.json"
+  ],
+  "claims_match_live_verdict_dataset": true,
+  "current_gate_git_sha": "fce5c732f2757b998842649eaa3cda92ca08ed93",
+  "formal_log_sha256": "9f09341c80f394255f47eb905bba6ad616d2e25e8a3ee2171c4c8f8295f066dd",
+  "formal_run_id": "448ed902-e449-4aed-b542-52282bb0138b",
+  "formal_run_status": "done",
+  "missing_active_links": [],
+  "missing_old_paths": [],
+  "official_claims_match_live_verdict_dataset": true,
+  "old_path_set_is_subset": true,
+  "old_proxy_not_active": true,
+  "old_proxy_preserved": true,
+  "root_replay_files_exist": true,
+  "secret_scan_passed": true,
+  "upload_hash_manifest_verified": true,
+  "verdicts": [
+    "VERIFIED",
+    "VERIFIED",
+    "VERIFIED",
+    "VERIFIED",
+    "FALSIFIED",
+    "FALSIFIED"
+  ]
+}

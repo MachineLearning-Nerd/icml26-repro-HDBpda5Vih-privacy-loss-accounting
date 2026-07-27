@@ -5,6 +5,7 @@ from __future__ import annotations
 from verify_algorithm_contract import main as verify_algorithm
 from verify_bernoulli_utility import main as verify_bernoulli
 from verify_exact_theorems import main as verify_exact
+from verify_judge_contract import main as verify_judge_contract
 from verify_numerical_comparison import main as verify_numerical
 from verify_preamble_collector import main as verify_preamble
 
@@ -16,11 +17,12 @@ def main() -> int:
     preamble_status = verify_preamble()
     numerical_status = verify_numerical()
     bernoulli_status = verify_bernoulli()
+    judge_status = verify_judge_contract()
     print(
         "CUMULATIVE_STATUS="
         f"{{'claims_1_3': {exact_status}, 'claim_2': {algorithm_status}, "
         f"'claim_4': {numerical_status}, 'claim_5': {bernoulli_status}, "
-        f"'claim_6': {preamble_status}}}"
+        f"'claim_6': {preamble_status}, 'judge_release': {judge_status}}}"
     )
     return (
         0
@@ -29,6 +31,7 @@ def main() -> int:
         and numerical_status == 0
         and bernoulli_status == 0
         and preamble_status == 0
+        and judge_status == 0
         else 1
     )
 

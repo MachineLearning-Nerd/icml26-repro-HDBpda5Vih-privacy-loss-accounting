@@ -1,0 +1,10 @@
+{
+  "backend": "hf",
+  "commit": "eb1c5a4432cd911b52fc5113e5964e25087e59bf",
+  "experiment_id": "d16d894d-580c-4ead-bad3-833ada5d3722",
+  "fixed_command": "uv run --frozen python repro/src/verify_pld.py",
+  "log_sha256": "dd1f0947e66d2e7822ff777ce7dd28fd52404071345f7bc5fce40c09c89ae9f2",
+  "run_duration": "2h39m",
+  "run_id": "8dd2fea5-5142-4eb9-bbee-fe1c027909ae",
+  "status": "done"
+}

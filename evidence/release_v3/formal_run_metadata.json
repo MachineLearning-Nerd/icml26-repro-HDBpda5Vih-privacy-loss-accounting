@@ -1,0 +1,19 @@
+{
+  "backend": "hf",
+  "branch": "orx/unambiguous-current-run-provenance",
+  "command": "uv run --frozen python repro/src/verify_pld.py",
+  "commit": "fce5c732f2757b998842649eaa3cda92ca08ed93",
+  "compute": {
+    "accelerator": "none",
+    "hardware": "cpu-upgrade",
+    "provider": "Hugging Face"
+  },
+  "duration_seconds": 11460,
+  "duration_source": "orx run status (3h11m)",
+  "experiment_id": "836844ba-3903-4d0d-ae92-cd1fdcc4286d",
+  "formal_log": "cumulative_run.log",
+  "formal_log_sha256": "9f09341c80f394255f47eb905bba6ad616d2e25e8a3ee2171c4c8f8295f066dd",
+  "gpu_used": false,
+  "run_id": "448ed902-e449-4aed-b542-52282bb0138b",
+  "status": "done"
+}
