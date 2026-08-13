@@ -21,7 +21,7 @@ Live release state at the final check:
 - Hugging Face head: `bd20a58b84d5a076b4d9e5b2108eb6715a0d6eb9`;
 - judge head: `2a3cacbe5ed8be13463a9187d31351e0ab922639`;
 - judge time: `2026-07-25T04:21:40+00:00`;
-- winning Git branch: `orx/unambiguous-current-run-provenance`;
+- winning Git branch: `audit/unambiguous-run-provenance`;
 - winning Git SHA: `fce5c732f2757b998842649eaa3cda92ca08ed93`.
 
 ## What the paper asks
@@ -102,7 +102,7 @@ registered cubic-log and `alpha^-2` terms over the audited range.
 ## Executed implementation
 
 The candidate branch is
-[`orx/unambiguous-current-run-provenance`](https://github.com/MachineLearning-Nerd/icml26-repro-HDBpda5Vih-privacy-loss-accounting/tree/orx/unambiguous-current-run-provenance)
+[`audit/unambiguous-run-provenance`](https://github.com/MachineLearning-Nerd/icml26-efficient-privacy-loss-accounting/tree/audit/unambiguous-run-provenance)
 at Git SHA `fce5c732f2757b998842649eaa3cda92ca08ed93`.
 
 Every experiment node inherits the same command:
@@ -155,12 +155,12 @@ orx create-experiment f4f85116-fca4-48fe-8f52-c1079b45c7f6 --title "Active judge
 git checkout orx/active-judge-tree-without-proxy-ambiguity
 git commit -m "Clarify active judge evidence routing"
 git commit -m "Align claim pages with direct judge evidence"
-git push -u origin orx/active-judge-tree-without-proxy-ambiguity
+git push -u origin audit/active-judge-tree
 orx exp run 2db2f02d-84aa-4db3-80f5-b6337a742be0 --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 6h
 orx create-experiment f4f85116-fca4-48fe-8f52-c1079b45c7f6 --title "Unambiguous current-run provenance" --parent 2db2f02d-84aa-4db3-80f5-b6337a742be0
-git checkout orx/unambiguous-current-run-provenance
+git checkout audit/unambiguous-run-provenance
 git commit -m "Clarify definitive run provenance"
-git push -u origin orx/unambiguous-current-run-provenance
+git push -u origin audit/unambiguous-run-provenance
 orx exp run 836844ba-3903-4d0d-ae92-cd1fdcc4286d --backend hf --flavor cpu-upgrade --image ghcr.io/astral-sh/uv:python3.12-bookworm-slim --timeout 6h
 orx logs 448ed902-e449-4aed-b542-52282bb0138b --head --bytes 1000000
 uv run --frozen python repro/src/verify_judge_contract.py

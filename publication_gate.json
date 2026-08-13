@@ -1,8 +1,43 @@
 {
-  "paper": "HDBpda5Vih",
+  "repository": "MachineLearning-Nerd/icml26-efficient-privacy-loss-accounting",
+  "paper_title": "Efficient Privacy Loss Accounting for Subsampling and Random Allocation",
+  "paper_arxiv": "2602.17284v2",
+  "paper_openreview": "HDBpda5Vih",
+  "authors": [
+    "Vitaly Feldman",
+    "Moshe Shenfeld"
+  ],
+  "status": "PARTIAL_SUCCESS_WITH_TWO_LITERAL_LOCATOR_FALSIFICATIONS",
   "tests_passed": true,
-  "publication_gate_passed": true,
-  "claims_verified": 6,
+  "evidence_release_gate_passed": true,
+  "publication_gate_passed": false,
   "claims_total": 6,
-  "arxiv": "2602.17284"
+  "claims_verified": 4,
+  "claims_falsified": 2,
+  "substantive_claims_verified": 6,
+  "claim_status": {
+    "claim_1": "VERIFIED_SCOPED",
+    "claim_2": "VERIFIED_SCOPED",
+    "claim_3": "VERIFIED_SCOPED",
+    "claim_4": "VERIFIED_SCOPED_WITH_REPRODUCTION_DEVIATIONS",
+    "claim_5": "FALSIFIED_AS_REGISTERED_LOCATOR",
+    "claim_6": "FALSIFIED_AS_REGISTERED_LOCATOR"
+  },
+  "substantive_status": {
+    "claim_5": "VERIFIED_SCOPED",
+    "claim_6": "VERIFIED_SCOPED"
+  },
+  "falsifications": {
+    "claim_5": "The Bernoulli experiment is Figure 5 in the audited paper source, not the registered Figure 4.",
+    "claim_6": "The PREAMBLE comparison is Figure 3 in the audited paper source, not the registered Figure 5."
+  },
+  "authoritative_evidence": ".openresearch/artifacts/judge_release",
+  "latest_direct_evidence_git_sha": "fce5c732f2757b998842649eaa3cda92ca08ed93",
+  "cumulative_release_git_sha": "1eb57c864b5280952dbe86739fe4b869f69d10b4",
+  "hf_space": "DineshAI/HDBpda5Vih",
+  "hf_revision": "bd20a58b84d5a076b4d9e5b2108eb6715a0d6eb9",
+  "judged_revision_before_correction": "2a3cacbe5ed8be13463a9187d31351e0ab922639",
+  "publication_status": "awaiting_judge",
+  "live_judged_score": "5/12",
+  "score_increase_claimed": false
 }
